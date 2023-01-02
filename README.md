@@ -19,8 +19,12 @@ audit.
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
 #### Affected Source Code
-* [BaseUpgradeable.sol](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/BaseUpgradeable.sol#L10)
+* [BaseUpgradeable.sol:10](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/BaseUpgradeable.sol#L10)
 
     For more read...
     1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
+## Structs should be named using the CapWords style(Naming convention)
+#### Affected Source Code
+* [MinipoolManager.sol:82](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L82)
