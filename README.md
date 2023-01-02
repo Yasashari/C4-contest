@@ -12,6 +12,7 @@ specified in the constructor or initialize is different than address(0).
 * [Ocyticus.sol:28](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Ocyticus.sol#L28)
 * [ProtocolDAO.sol:191](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/ProtocolDAO.sol#L191)
 * [Staking.sol:62](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L62)
+* [Storage.sol:47](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Storage.sol#L47)
 
 
 
