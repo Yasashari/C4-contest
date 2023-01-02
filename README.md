@@ -9,6 +9,8 @@ specified in the constructor or initialize is different than address(0).
 * [ClaimNodeOp.sol:31](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/ClaimNodeOp.sol#L31)
 * [MinipoolManager.sol:183](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L183)
 * [MinipoolManager.sol:184](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L184)
+* [Ocyticus.sol:28](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Ocyticus.sol#L28)
+
 
 
 
