@@ -28,3 +28,7 @@ audit.
 ## Structs should be named using the CapWords style(Naming convention)
 #### Affected Source Code
 * [MinipoolManager.sol:82](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L82)
+
+    For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+
