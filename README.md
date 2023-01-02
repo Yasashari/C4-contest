@@ -14,3 +14,6 @@ audit.
 
 #### Affected Source Code
 * [BaseAbstract.sol:6](https://github.com/code-423n4/2022-12-gogopool/blob/aec9928d8bdce8a5a4efe45f54c39d4fc7313731/contracts/contract/BaseAbstract.sol#L6)
+
+## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
+* [BaseUpgradeable.sol](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/BaseUpgradeable.sol#L10)
