@@ -259,14 +259,40 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Stor
 	84	function transferAVAX(string memory toContractName, uint256 amount) external onlyRegisteredNetworkContract {
 	
 	108	function depositToken(
+		string memory networkContractName,
+		ERC20 tokenContract,
+		uint256 amount
+		) external guardianOrRegisteredContract {
 	
 	137	function withdrawToken(
+		address withdrawalAddress,
+		ERC20 tokenAddress,
+		uint256 amount
+		) external onlyRegisteredNetworkContract nonReentrant {
 	
 	166	function transferToken(
+		string memory networkContractName,
+		ERC20 tokenAddress,
+		uint256 amount
+		) external onlyRegisteredNetworkContract {
 	
 	204	function addAllowedToken(address tokenAddress) external onlyGuardian {
 	
 	208	function removeAllowedToken(address tokenAddress) external onlyGuardian {
+	
+
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Vault.sol#61
+
+	File: contracts/contract/TokenggAVAX.sol
+	
+	153	function withdrawForStaking(uint256 assets) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/tokens/TokenggAVAX.sol#L153
+
+
+	
+
+	
 	
 	
 	
