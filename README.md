@@ -40,4 +40,19 @@ audit.
 
     For more read...
     1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+    
+    
+## Gas Report
+
+
+## ADD UNCHECKED {} FOR ITERATOR WHERE THE OPERANDS CANNOT OVERFLOW BECAUSE ITS ALLWAYS BELOW THE GIVEN NUMBER.
+	
+for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i}
+
+
+There are ... instances of this issue:
+
+        File: src/lib/SafeERC20Namer.sol
+
+        13	for (uint256 j = 0; j < 32; j++) {
 
