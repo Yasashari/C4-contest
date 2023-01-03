@@ -172,6 +172,88 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Mult
 	
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Ocyticus.sol#L27
 
+	File: contracts/contract/Oracle.sol
+	
+	28	function setOneInch(address addr) external onlyGuardian {
+	
+	57	function setGGPPriceInAVAX(uint256 price, uint256 timestamp) external onlyMultisig {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Oracle.sol#L28
+
+	File: contracts/contract/ProtocolDAO.sol
+	
+	23	function initialize() external onlyGuardian {
+	
+	67	function pauseContract(string memory contractName) public onlySpecificRegisteredContract("Ocyticus", msg.sender) {
+	
+	73	function resumeContract(string memory contractName) public onlySpecificRegisteredContract("Ocyticus", msg.sender) {
+	
+	96	function setTotalGGPCirculatingSupply(uint256 amount) public onlySpecificRegisteredContract("RewardsPool", msg.sender) {
+	
+	107	function setClaimingContractPct(string memory claimingContract, uint256 decimal) public onlyGuardian valueNotGreaterThanOne(decimal) {
+	
+	156	function setExpectedAVAXRewardsRate(uint256 rate) public onlyMultisig valueNotGreaterThanOne(rate) {
+	
+	190	function registerContract(address addr, string memory name) public onlyGuardian {
+	
+	198	function unregisterContract(address addr) public onlyGuardian {
+	
+	209	function upgradeExistingContract(
+		address newAddr,
+		string memory newName,
+		address existingAddr
+		) external onlyGuardian {
+		
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/ProtocolDAO.sol#L23
+
+	File: contracts/contract/RewardsPool.sol
+	
+	34	function initialize() external onlyGuardian {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/RewardsPool.sol#34
+
+	File: contracts/contract/Staking.sol
+	
+	110	function increaseAVAXStake(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	117	function decreaseAVAXStake(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	133	function increaseAVAXAssigned(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	140	function decreaseAVAXAssigned(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	156	function increaseAVAXAssignedHighWater(address stakerAddr, uint256 amount) public onlyRegisteredNetworkContract {
+	
+	163	function resetAVAXAssignedHighWater(address stakerAddr) public onlyRegisteredNetworkContract {
+	
+	180	function increaseMinipoolCount(address stakerAddr) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	187	function decreaseMinipoolCount(address stakerAddr) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+	
+	204	function setRewardsStartTime(address stakerAddr, uint256 time) public onlyRegisteredNetworkContract {
+	
+	224	function increaseGGPRewards(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("ClaimNodeOp", msg.sender) {
+	
+	231	function decreaseGGPRewards(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("ClaimNodeOp", msg.sender) {
+	
+	248	function setLastRewardsCycleCompleted(address stakerAddr, uint256 cycleNumber) public onlySpecificRegisteredContract("ClaimNodeOp", msg.sender) 
+	
+	328	function restakeGGP(address stakerAddr, uint256 amount) public onlySpecificRegisteredContract("ClaimNodeOp", msg.sender) {
+	
+	379	function slashGGP(address stakerAddr, uint256 ggpAmt) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
+
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L110
+	
+	
+	
+
+
+	
+		
+		
+		
+	
+
 
 
 	
