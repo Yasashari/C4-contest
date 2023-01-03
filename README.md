@@ -138,7 +138,31 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Base
 if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as
 payable will lower the gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
 
-There are ... instances of this issue:      
+There are ... instances of this issue:
+
+	File: contracts/contract/ClaimNodeOp.sol
+	
+	40	function setRewardsCycleTotal(uint256 amount) public onlySpecificRegisteredContract("RewardsPool", msg.sender) {
+	
+	56	function calculateAndDistributeRewards(address stakerAddr, uint256 totalEligibleGGPStaked) external onlyMultisig {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/ClaimNodeOp.sol#L40
+
+	File: contracts/contract/MultisigManager.sol
+	
+	35	function registerMultisig(address addr) external onlyGuardian {
+	
+	55	function enableMultisig(address addr) external onlyGuardian{
+	
+	68	function disableMultisig(address addr) external guardianOrSpecificRegisteredContract("Ocyticus", msg.sender) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MultisigManager.sol#L35
+
+	
+	
+	
+
+	
 
 
 
