@@ -158,6 +158,22 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Clai
 	
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MultisigManager.sol#L35
 
+	File: contracts/contract/Ocyticus.sol
+	
+	27	function addDefender(address defender) external onlyGuardian {
+	
+	32	function removeDefender(address defender) external onlyGuardian {
+	
+	37	function pauseEverything() external onlyDefender {
+	
+	47	function resumeEverything() external onlyDefender {
+	
+	55	function disableAllMultisigs() public onlyDefender {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Ocyticus.sol#L27
+
+
+
 	
 	
 	
