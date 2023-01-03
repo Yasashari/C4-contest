@@ -291,7 +291,7 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/toke
 
 
 ## NO NEED TO COMPARE BOOLEAN EXPRESSIONS TO BOOLEAN LITERALS
-if (<x> == true) => if (<x>), if (<x> == false) => if (!<x>)
+if (x == true) => if (x), if (x == false) => if (!<x>)
 	
 	File: contracts/contract/BaseAbstract.sol
 	
