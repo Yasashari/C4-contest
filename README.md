@@ -290,6 +290,31 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Vaul
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/tokens/TokenggAVAX.sol#L153
 
 
+## NO NEED TO COMPARE BOOLEAN EXPRESSIONS TO BOOLEAN LITERALS
+if (<x> == true) => if (<x>), if (<x> == false) => if (!<x>)
+	
+	File: contracts/contract/BaseAbstract.sol
+	
+	25	if (getBool(keccak256(abi.encodePacked("contract.exists", msg.sender))) == false) {
+	
+	74	if (enabled == false) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/BaseAbstract.sol#L25
+	
+	
+	File: contracts/contract/Storage.sol
+	
+	29	if (booleanStorage[keccak256(abi.encodePacked("contract.exists", msg.sender))] == false && msg.sender != guardian) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Storage.sol#L29
+	
+	
+	
+	
+	
+	
+
+
 	
 
 	
