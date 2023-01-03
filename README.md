@@ -50,7 +50,7 @@ audit.
 for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i}
 
 
-There are ... instances of this issue:
+There are 8 instances of this issue:
 
         File: contracts/contract/MinipoolManager.sol
 
@@ -96,6 +96,8 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Stak
 
 Above if statement already check overflow avaxBalances and its value cannot be negative because amout is less than avaxBalances.So use uncheck blocks
 
+There are 3 instances of this issue:
+
 	File: contracts/contract/Vault.sol
 	
 	75	avaxBalances[contractName] = avaxBalances[contractName] - amount;
@@ -109,6 +111,8 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Vaul
 
 
 ## X = X + Y IS MORE EFFICIENT, THAN X += Y
+
+There are 2 instances of this issue:
 
 	File: contracts/contract/TokenggAVAX.sol
 	
@@ -125,7 +129,7 @@ When using elements that are smaller than 32 bytes, your contract’s gas usage 
 Therefore, if the element is smaller than that, the EVM must use more operations in order to reduce the size of the element from 32 bytes to the
 desired size.
 
-There are 1 instances of this issue:
+There is 1 instance of this issue:
 
 	File: contracts/contract/BaseAbstract.sol
 	
@@ -138,7 +142,7 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Base
 if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as
 payable will lower the gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
 
-There are ... instances of this issue:
+There are 46 instances of this issue:
 
 	File: contracts/contract/ClaimNodeOp.sol
 	
@@ -292,6 +296,8 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/toke
 
 ## NO NEED TO COMPARE BOOLEAN EXPRESSIONS TO BOOLEAN LITERALS
 if (x == true) => if (x), if (x == false) => if (!<x>)
+	
+There are 3 instances of this issue:
 	
 	File: contracts/contract/BaseAbstract.sol
 	
