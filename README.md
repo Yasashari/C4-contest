@@ -243,6 +243,32 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Rewa
 	379	function slashGGP(address stakerAddr, uint256 ggpAmt) public onlySpecificRegisteredContract("MinipoolManager", msg.sender) {
 
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L110
+
+	File: contracts/contract/Storage.sol
+	
+	170	function addUint(bytes32 key, uint256 amount) external onlyRegisteredNetworkContract {
+	
+	176	function subUint(bytes32 key, uint256 amount) external onlyRegisteredNetworkContract {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Storage.sol#L170
+
+	File: contracts/contract/Vault.sol
+	
+	61	function withdrawAVAX(uint256 amount) external onlyRegisteredNetworkContract nonReentrant {
+	
+	84	function transferAVAX(string memory toContractName, uint256 amount) external onlyRegisteredNetworkContract {
+	
+	108	function depositToken(
+	
+	137	function withdrawToken(
+	
+	166	function transferToken(
+	
+	204	function addAllowedToken(address tokenAddress) external onlyGuardian {
+	
+	208	function removeAllowedToken(address tokenAddress) external onlyGuardian {
+	
+	
 	
 	
 	
