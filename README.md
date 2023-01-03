@@ -52,9 +52,15 @@ for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i}
 
 There are ... instances of this issue:
 
-        File: src/lib/SafeERC20Namer.sol
+        File: contracts/contract/MinipoolManager.sol
 
-        13	for (uint256 j = 0; j < 32; j++) {
+	619	for (uint256 i = offset; i < max; i++) {
+	
+	623	total++;
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L619
+	
+	
 	
 	
 	
