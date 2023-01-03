@@ -59,6 +59,47 @@ There are ... instances of this issue:
 	623	total++;
 	
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MinipoolManager.sol#L619
+
+	File: contracts/contract/MultisigManager.sol
+	
+	84	for (uint256 i = 0; i < total; i++) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/MultisigManager.sol#L84
+
+	File: contracts/contract/Ocyticus.sol
+	
+	61	for (uint256 i = 0; i < count; i++) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Ocyticus.sol#L61
+
+
+	File: contracts/contract/RewardsPool.sol
+	
+	74	for (uint256 i = 0; i < inflationIntervalsElapsed; i++) {
+	
+	215	for (uint256 i = 0; i < count; i++) {
+	
+	230	for (uint256 i = 0; i < enabledMultisigs.length; i++) {
+	
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/RewardsPool.sol#L74
+
+	File: contracts/contract/Staking.sol
+	
+	428	for (uint256 i = offset; i < max; i++) {
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L428
+
+
+	
+	
+
+
+
+	
+	
+	
+
 	
 	
 	
