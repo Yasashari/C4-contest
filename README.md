@@ -91,6 +91,43 @@ https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Rewa
 https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L428
 
 
+
+## ADD UNCHECKED {}  WHERE THE OPERANDS CANNOT OVERFLOW/UNDERFLOW BECAUSE THOSE CRITERIA ARE CHECKED BY ABOVE STATEMENTS. 
+
+Above if statement already check overflow avaxBalances and its value cannot be negative because amout is less than avaxBalances.So use uncheck blocks
+
+	File: contracts/contract/Vault.sol
+	
+	75	avaxBalances[contractName] = avaxBalances[contractName] - amount;
+	
+	99	avaxBalances[fromContractName] = avaxBalances[fromContractName] - amount;
+	
+	187	tokenBalances[contractKeyFrom] = tokenBalances[contractKeyFrom] - amount;
+	
+	
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Vault.sol#L75
+
+
+## X = X + Y IS MORE EFFICIENT, THAN X += Y
+
+	File: contracts/contract/TokenggAVAX.sol
+	
+	245	totalReleasedAssets -= amount;
+	
+	252	totalReleasedAssets += amount;
+	
+
+https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/tokens/TokenggAVAX.sol#L245
+	
+	
+
+
+
+
+
+
+
+
 	
 	
 
