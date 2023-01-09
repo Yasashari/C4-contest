@@ -96,6 +96,37 @@ audit.
 #### Affected Source Code
 * [BaseAbstract.sol:6](https://github.com/code-423n4/2022-12-gogopool/blob/aec9928d8bdce8a5a4efe45f54c39d4fc7313731/contracts/contract/BaseAbstract.sol#L6)
 
+
+# Gas Report
+
+## ADD UNCHECKED {} FOR ITERATOR WHERE THE OPERANDS CANNOT OVERFLOW BECAUSE ITS ALLWAYS BELOW THE GIVEN NUMBER.
+	
+for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i}
+
+There are 7 instances of this issue:
+
+        File: contracts/contract/MinipoolManager.sol
+
+	100	for (uint256 i = 0; i < opasLen; i++) {
+	
+	107	for (uint256 a = 0; a < opasLen; a++) {
+	
+	112	for (uint256 i = 0; i < opslen; i++) {
+	
+	114	opIndex++;
+	
+	128	for (uint256 a = 0; a < opasLen; a++) {
+	
+	134	for (uint256 i = 0; i < opslen; i++) {
+	
+	136	 opIndex++;
+	
+
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/EntryPoint.sol#L100
+
+
+
+
 	
 	
 
