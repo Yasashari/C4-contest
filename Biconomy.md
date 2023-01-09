@@ -83,10 +83,7 @@ specified in the constructor or initialize is different than address(0).
 * [StakeManager.sol:115](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/StakeManager.sol#L115)
 * [FallbackManager.sol:26](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/base/FallbackManager.sol#L26)
 * [VerifyingSingletonPaymaster.sol:55](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/verifying/singleton/VerifyingSingletonPaymaster.sol#L55)
-* [ProtocolDAO.sol:191](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/ProtocolDAO.sol#L191)
-* [Staking.sol:62](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Staking.sol#L62)
-* [Storage.sol:47](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Storage.sol#L47)
-* [Vault.sol:205](https://github.com/code-423n4/2022-12-gogopool/blob/main/contracts/contract/Vault.sol#L205)
+
 
 
 
