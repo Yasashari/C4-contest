@@ -70,7 +70,7 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 ## Recommended Mitigation Steps
 	So better to have upper bound of unstake delay or set function to decrease the unstake delay time. 
 
-#QA report
+# QA report
 
 ## LACK OF CHECKS ADDRESS(0)
 The following methods have a lack of checks if the received argument is an address, it’s good practice in order to reduce human error to check that the address
