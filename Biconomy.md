@@ -24,10 +24,10 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 
      To avoid that one setup two step process transfer ownership and accept it by new owner.
      
-    address public owner;
-    address public newOwner;
+    	address public owner;
+    	address public newOwner;
     
-    function setOwner(address newAddress) external {
+    	function setOwner(address newAddress) external {
 		// Check tx comes from current owner
 		if (msg.sender != owner) {
 			revert MustBeOwner();
@@ -49,6 +49,39 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 		emit EOAChanged(address(this),oldOwner,owner);
 	}
     
+
+## There is no upperboud for unstakedelaysec. So user funds can be stucked for long time.
+	User able to pass large number (uint32 max number) also cannot decrease untastake delay. That might caused user funds stucked long time. 
+	If consider the maximum number of uint32 and users are able to set unstake delay up to 136 years. If user unintentionally pass number then 
+	their funds might be stuck long time. 
+	
+	
+	59	function addStake(uint32 _unstakeDelaySec) public payable {
+        	....
+        62	require(_unstakeDelaySec >= info.unstakeDelaySec, "cannot decrease unstake time");
+        	....
+    		}
+
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/StakeManager.sol#L62
+
+## Tools Used
+	VS Code
+
+## Recommended Mitigation Steps
+	So better to have upper bound of unstake delay or set function to decrease the unstake delay time. 
+
+	
+	
+
+	
+		
+
+	
+	
+	
+	
+
+	
  
     
     
