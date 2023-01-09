@@ -185,6 +185,34 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L526
 
 
+SmartAccount.sol
+
+	109	function setOwner(address _newOwner) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L109
+
+	120	function updateImplementation(address _implementation) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L120
+
+	127	function updateEntryPoint(address _newEntryPoint) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L127
+
+	449	function transfer(address payable dest, uint amount) external nonReentrant onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L449
+
+	455	function pullTokens(address token, address dest, uint256 amount) external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L455
+
+	460	function execute(address dest, uint value, bytes calldata func) external onlyOwner{
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L460
+
+	465	function executeBatch(address[] calldata dest, bytes[] calldata func) external onlyOwner{
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L465
+
+	536	function withdrawDepositTo(address payable withdrawAddress, uint256 amount) public onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L536
+	
+
+
 
 
 
