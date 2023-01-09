@@ -113,6 +113,10 @@ specified in the constructor or initialize is different than address(0).
 #### Affected Source Code
 [MultiSend.sol:10](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/libs/MultiSend.sol#L10)
 
+  For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
 
 ## Missing natspec comments
 #### Affected Source Code
