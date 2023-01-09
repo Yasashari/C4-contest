@@ -58,7 +58,7 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 	
 	59	function addStake(uint32 _unstakeDelaySec) public payable {
         	....
-        62	require(_unstakeDelaySec >= info.unstakeDelaySec, "cannot decrease unstake time");
+	62	require(_unstakeDelaySec >= info.unstakeDelaySec, "cannot decrease unstake time");
         	....
     		}
 
