@@ -155,8 +155,11 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 
 ## FUNCTIONS GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED PAYABLE
 
+
 if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as payable will lower the
 gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
+
+There are 26 instances of this issue:
 
 SmartAccountNoAuth.sol
 
