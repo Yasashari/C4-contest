@@ -210,6 +210,23 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 
 	536	function withdrawDepositTo(address payable withdrawAddress, uint256 amount) public onlyOwner {
 https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccount.sol#L536
+
+BasePaymaster.sol
+
+	24	function setEntryPoint(IEntryPoint _entryPoint) public onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L24
+
+	67	function withdrawTo(address payable withdrawAddress, uint256 amount) public virtual onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L67
+
+	75	function addStake(uint32 unstakeDelaySec) external payable onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L75
+
+	90	function unlockStake() external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L90
+
+	99	function withdrawStake(address payable withdrawAddress) external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L99
 	
 
 
