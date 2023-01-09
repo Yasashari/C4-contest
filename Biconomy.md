@@ -1,5 +1,5 @@
 ## NO TRANSFER OWNERSHIP PATTERN
-if owner has passed wrong account address here then contract is in a risk.
+if owner enter wrong account address here then contract is in a risk.
 
     109     function setOwner(address _newOwner) external mixedAuth {
     
@@ -52,8 +52,8 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 
 ## There is no upperboud for unstakedelaysec. So user funds can be stucked for long time.
 	User able to pass large number (uint32 max number) also cannot decrease untastake delay. That might caused user funds stucked long time. 
-	If consider the maximum number of uint32 and users are able to set unstake delay up to 136 years. If user unintentionally pass number then 
-	their funds might be stuck long time. 
+	If consider the maximum number of uint32 and it converted to epochtimestamp users are able to set unstake delay up to 136 years. If user unintentionally pass
+	number then their funds might be stuck long time. 
 	
 	
 	59	function addStake(uint32 _unstakeDelaySec) public payable {
@@ -152,6 +152,14 @@ There are 7 instances of this issue:
 	
 
 https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/EntryPoint.sol#L100
+
+## FUNCTIONS GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED PAYABLE
+
+if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as payable will lower the
+gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
+
+SmartAccountNoAuth.sol
+	function setOwner(address _newOwner) external mixedAuth (https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L109)
 
 
 
