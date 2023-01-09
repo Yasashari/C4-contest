@@ -227,6 +227,27 @@ https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts
 
 	99	function withdrawStake(address payable withdrawAddress) external onlyOwner {
 https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L99
+
+
+VerifyingSingletonPaymaster.sol
+
+	65	function setSigner( address _newVerifyingSigner) external onlyOwner{ 
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/verifying/singleton/VerifyingSingletonPaymaster.sol#L65
+
+
+BasePaymaster.sol
+
+	24	function setEntryPoint(IEntryPoint _entryPoint) public onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/BasePaymaster.sol#L24
+
+	67	function withdrawTo(address payable withdrawAddress, uint256 amount) public onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/BasePaymaster.sol#L67
+
+	90	function unlockStake() external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/BasePaymaster.sol#L90
+
+	99	function withdrawStake(address payable withdrawAddress) external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/BasePaymaster.sol#L99
 	
 
 
