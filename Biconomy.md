@@ -160,7 +160,30 @@ gas cost for legitimate callers because the compiler will not include checks for
 
 SmartAccountNoAuth.sol
 
-	[function setOwner(address _newOwner) external mixedAuth](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol) 
+	109	function setOwner(address _newOwner) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L109
+
+	120	function updateImplementation(address _implementation) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L120
+
+	127	function updateEntryPoint(address _newEntryPoint) external mixedAuth {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L127
+
+	439	function transfer(address payable dest, uint amount) external nonReentrant onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L439
+
+	445	function pullTokens(address token, address dest, uint256 amount) external onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L445
+
+	450	function execute(address dest, uint value, bytes calldata func) external onlyOwner{
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L450
+
+	455	function executeBatch(address[] calldata dest, bytes[] calldata func) external onlyOwner{
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L455
+
+	526	function withdrawDepositTo(address payable withdrawAddress, uint256 amount) public onlyOwner {
+https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L526
+
 
 
 
