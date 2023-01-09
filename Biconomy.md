@@ -1,5 +1,5 @@
 ## NO TRANSFER OWNERSHIP PATTERN
-if owner has passed wrong account address here then contract is in huge risk.
+if owner has passed wrong account address here then contract is in a risk.
 
     109     function setOwner(address _newOwner) external mixedAuth {
     
