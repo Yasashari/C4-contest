@@ -159,7 +159,7 @@ if a function modifier such as onlyOwner is used, the function will revert if a 
 gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
 
 SmartAccountNoAuth.sol
-	function setOwner(address _newOwner) external mixedAuth (https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L109)
+	[function setOwner(address _newOwner) external mixedAuth](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L109)
 
 
 
