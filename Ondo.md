@@ -210,9 +210,9 @@ its better not to use assembly because it reduce readability & future updatabili
 
 Recommendation
 Consider removeing all assembly code and re-implement them in Solidity to make the code significantly more clean.
-* [cErc20ModifiedDelegator.sol:1207](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1207)
-* [cErc20ModifiedDelegator.sol:1240](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1240)
-* [cErc20ModifiedDelegator.sol:1268](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1268)
+* [cErc20ModifiedDelegator.sol:1205](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1205)
+* [cErc20ModifiedDelegator.sol:1238](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1238)
+* [cErc20ModifiedDelegator.sol:1259](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1259)
 
 
 
