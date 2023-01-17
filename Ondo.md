@@ -47,7 +47,7 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPrice
         require( cash + borrows > reserves )
         
 ##  FRONTRUN IS POSSIBLE WHEN CHANGING APPROVE AMOUNT
-    when changing the approved amount frontrun is possible. So its safer to inherit openzeppling SafeERC20 lib. 
+    When changing the approved amount frontrun is possible. So its safer to inherit openzeppling SafeERC20 lib. 
 
 Proof of Concept
     
