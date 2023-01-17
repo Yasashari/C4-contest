@@ -115,7 +115,7 @@ specified in the constructor or initialize is different than address(0).
     In oder to prevent human errors its better to having a value for units rather than inizialize with 0 values.
     
 * [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
-* [JumpRateModelV2.sol:59](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L59:64)
+* [JumpRateModelV2.sol:59](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L59-L64)
    
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
