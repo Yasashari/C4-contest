@@ -48,11 +48,15 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPrice
         
 ##  FRONTRUN IS POSSIBLE WHEN CHANGING APPROVE AMOUNT
     When changing the approved amount frontrun is possible. So its safer to inherit openzeppling SafeERC20 lib. 
+    There are 2 instances ot this issue. 
 
 Proof of Concept
     
     182 function approve(
-https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#182
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#L182
+
+    182  function approve(
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CTokenCash.sol#L182
 
  Tools Used
     Vs code
