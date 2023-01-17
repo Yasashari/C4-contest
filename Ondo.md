@@ -54,6 +54,16 @@ Proof of Concept
     182 function approve(
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#182
 
+ Tools Used
+    Vs code
+ 
+ Recommended Mitigation Steps
+    
+    when increasing or decreaseing approve amount its safer to use safeIncreaseAllowance and safeDecreaseAllowance on safeERC20 lib.
+    https://github.com/OpenZeppelin/openzeppelin-contracts/blob/566a774222707e424896c0c390a84dc3c13bdcb2/contracts/token/ERC20/utils/SafeERC20.sol#L59
+    https://github.com/OpenZeppelin/openzeppelin-contracts/blob/566a774222707e424896c0c390a84dc3c13bdcb2/contracts/token/ERC20/utils/SafeERC20.sol#L68
+    
+
     
     
  
