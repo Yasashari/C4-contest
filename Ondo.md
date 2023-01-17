@@ -45,6 +45,17 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPrice
  
     add require statement in function utilizationRate() on  https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L116
         require( cash + borrows > reserves )
+        
+##  FRONTRUN IS POSSIBLE WHEN CHANGING APPROVE AMOUNT
+    when changing the approved amount frontrun is possible. So its safer to inherit openzeppling SafeERC20 lib. 
+
+Proof of Concept
+    
+    182 function approve(
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#182
+
+    
+    
  
  
  
