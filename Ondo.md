@@ -269,6 +269,20 @@ payable will lower the gas cost for legitimate callers because the compiler will
 
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L805
 
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L819
+
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L855
+
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L898
+
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L909
+
+
+
+
+
+
+
 
 
 
