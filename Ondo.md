@@ -257,6 +257,10 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/factory/Cash
 
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/factory/CashFactory.sol#L127
 
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L933
+
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L961
+
 
 ## FUNCTIONS GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED PAYABLE
 
@@ -265,9 +269,7 @@ payable will lower the gas cost for legitimate callers because the compiler will
 
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L805
 
-https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L933
 
-https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L961
 
 
 
