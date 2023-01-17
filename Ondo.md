@@ -72,7 +72,9 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
 
 # QA report
 
-## FLOATING & OLD VERSION OF PRAGMA 
+## FLOATING & OLD VERSION OF PRAGMA
+ Use debugged complier version . Also use more recent compiler version. 
+ 
 #### Affected Source Code
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 * [JumpRateModelV2.sol:1](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L1)
@@ -95,16 +97,9 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
 * [Comp.sol:1](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/compound/governance/Comp.sol#L1)
 
 
-
-
-
-
-
-
 ## LACK OF CHECKS ADDRESS(0)
 The following methods have a lack of checks if the received argument is an address, it’s good practice in order to reduce human error to check that the address
 specified in the constructor or initialize is different than address(0).
-
 
 #### Affected Source Code
 
@@ -113,22 +108,11 @@ specified in the constructor or initialize is different than address(0).
 * [OndoPriceOracle.sol:119](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L119)
 * [JumpRateModelV2.sol:64](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L64)
 
-
-
-* [StakeManager.sol:115](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/StakeManager.sol#L115)
-* [FallbackManager.sol:26](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/base/FallbackManager.sol#L26)
-* [VerifyingSingletonPaymaster.sol:55](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/verifying/singleton/VerifyingSingletonPaymaster.sol#L55)
-* [BasePaymaster.sol:20](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L20)
-
 ## LACK OF CHEKS FOR UNITS IN ORDER TO PREVENT SETTING DEFAULT VALUES. 
     In oder to prevent human errors its better to having a value for units rather than inizialize with 0 values.
     
 * [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
 * [JumpRateModelV2.sol:59](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L59-L63)
-
-
-
-   
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
 #### Affected Source Code
@@ -140,19 +124,10 @@ specified in the constructor or initialize is different than address(0).
 * [CCash.sol:179](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCash.sol#L179)
 * [CCash.sol:193](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCash.sol#L193)
 
-
-
     For more read...
-    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
-## Private/internal state variables should have an underscore prefix
-#### Affected Source Code
-[MultiSend.sol:10](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/libs/MultiSend.sol#L10)
-
-  For more read...
-    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
-    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
     
  ## External & Public Functions should use mixedCase withot underscore
  #### Affected Source Code
@@ -190,7 +165,8 @@ specified in the constructor or initialize is different than address(0).
 * [CCash.sol:168](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCash.sol#L168)
 * [CCash.sol:268](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCash.sol#L268)
 
- 
+  For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
  
 
 ##  Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
@@ -204,19 +180,9 @@ prefix)
 * [CTokenInterfacesModified.sol:36](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L36)
 * [CTokenInterfacesModified.sol:113](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L113)
 
+ For more read...
+    1. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
-
-
-## Missing natspec comments
-#### Affected Source Code
-* [ModuleManager.sol:19](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/base/ModuleManager.sol#L19)
-
-## OPEN TODO
-The code that contains “open todos” reflects that the development is not finished and that the code can change a posteriori, prior release, with or without
-audit.
-
-#### Affected Source Code
-* [SmartAccountNoAuth.sol:44](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/SmartAccountNoAuth.sol#L44)
 
 ##  Remove assembly for future updates
 its better not to use assembly because it reduce readability & future updatability of the code even though assembly reduce gas. 
@@ -244,7 +210,6 @@ Consider removeing all assembly code and re-implement them in Solidity to make t
 
 ## Modifier and Events should top of the contract(Order of Layout)
 * [CTokenCash.sol:1434](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CTokenCash.sol#L1434)
-
 
 For more read...
 https://docs.soliditylang.org/en/v0.8.15/style-guide.html#order-of-layout
