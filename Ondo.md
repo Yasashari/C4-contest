@@ -87,7 +87,7 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
 * [cErc20ModifiedDelegator.sol:647](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L647)
 * [CTokenModified.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#L2)
 * [CTokenInterfacesModified.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L2)
-* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [CTokenDelegate.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L2)
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
@@ -187,6 +187,8 @@ specified in the constructor or initialize is different than address(0).
 * [CTokenInterfacesModified.sol:438](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L438)
 * [CTokenInterfacesModified.sol:451](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L451)
 * [CTokenInterfacesModified.sol:456](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L456)
+* [CTokenDelegate.sol:21](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L21)
+* [CTokenDelegate.sol:39](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L39)
 
  
  
@@ -224,6 +226,14 @@ Consider removeing all assembly code and re-implement them in Solidity to make t
 * [cErc20ModifiedDelegator.sol:1205](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1205)
 * [cErc20ModifiedDelegator.sol:1238](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1238)
 * [cErc20ModifiedDelegator.sol:1259](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1259)
+
+## incomplete comments
+* [CTokenDelegate.sol:22](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L22)
+* [CTokenDelegate.sol:25](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L25)
+
+## Unnecessary code(always false)
+* [CTokenDelegate.sol:26](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L26)
+
 
 
 
