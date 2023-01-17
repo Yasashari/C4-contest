@@ -246,10 +246,15 @@ https://docs.soliditylang.org/en/v0.8.15/style-guide.html#order-of-layout
 for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i}
 
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L750
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/kyc/KYCRegistry.sol#L163
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/kyc/KYCRegistry.sol#L180
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/factory/CashKYCSenderReceiverFactory.sol#L137
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/factory/CashKYCSenderFactory.sol#L137
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/factory/CashFactory.sol#L127
 
 
@@ -259,7 +264,9 @@ if a function modifier such as onlyOwner is used, the function will revert if a 
 payable will lower the gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
 
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L805
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L933
+
 https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/cash/CashManager.sol#L961
 
 
