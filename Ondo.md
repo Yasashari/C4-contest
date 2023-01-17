@@ -115,6 +115,7 @@ specified in the constructor or initialize is different than address(0).
     In oder to prevent human errors its better to having a value for units rather than inizialize with 0 values.
     
 * [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
+* [JumpRateModelV2.sol:59](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L59:64)
    
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
@@ -148,6 +149,11 @@ specified in the constructor or initialize is different than address(0).
   For more read...
     1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
+##  Constants should be named with all capital letters with underscores separating words.
+#### Affected Source Code
+* [JumpRateModelV2.sol:29](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L29)
+
 
 
 ## Missing natspec comments
