@@ -72,6 +72,27 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
 
 # QA report
 
+## FLOATING & OLD VERSION OF PRAGMA 
+#### Affected Source Code
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [JumpRateModelV2.sol:1](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L1)
+
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+
+
+
+
+
+
+
+
 ## LACK OF CHECKS ADDRESS(0)
 The following methods have a lack of checks if the received argument is an address, it’s good practice in order to reduce human error to check that the address
 specified in the constructor or initialize is different than address(0).
@@ -79,11 +100,22 @@ specified in the constructor or initialize is different than address(0).
 
 #### Affected Source Code
 
-* [StakeManager.sol:96](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/StakeManager.sol#L96)
+* [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
+* [OndoPriceOracle.sol:106](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L106)
+* [OndoPriceOracle.sol:119](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L119)
+
+
+
 * [StakeManager.sol:115](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/aa-4337/core/StakeManager.sol#L115)
 * [FallbackManager.sol:26](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/base/FallbackManager.sol#L26)
 * [VerifyingSingletonPaymaster.sol:55](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/verifying/singleton/VerifyingSingletonPaymaster.sol#L55)
 * [BasePaymaster.sol:20](https://github.com/code-423n4/2023-01-biconomy/blob/main/scw-contracts/contracts/smart-contract-wallet/paymasters/BasePaymaster.sol#L20)
+
+## LACK OF CHEKS FOR UNITS IN ORDER TO PREVENT SETTING DEFAULT VALUES. 
+    In oder to prevent human errors its better to having a value for units rather than inizialize with 0 values.
+    
+* [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
+   
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
 #### Affected Source Code
