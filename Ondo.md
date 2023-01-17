@@ -88,7 +88,7 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
 * [CTokenModified.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenModified.sol#L2)
 * [CTokenInterfacesModified.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L2)
 * [CTokenDelegate.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L2)
-* [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
+* [CErc20.sol:2](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L2)
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 
@@ -189,6 +189,9 @@ specified in the constructor or initialize is different than address(0).
 * [CTokenInterfacesModified.sol:456](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenInterfacesModified.sol#L456)
 * [CTokenDelegate.sol:21](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L21)
 * [CTokenDelegate.sol:39](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L39)
+* [CErc20.sol:168](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L168)
+* [CErc20.sol:236](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L236)
+* [CErc20.sol:268](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L268)
 
  
  
@@ -226,6 +229,8 @@ Consider removeing all assembly code and re-implement them in Solidity to make t
 * [cErc20ModifiedDelegator.sol:1205](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1205)
 * [cErc20ModifiedDelegator.sol:1238](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1238)
 * [cErc20ModifiedDelegator.sol:1259](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1259)
+* [CErc20.sol:204](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L204)
+* [CErc20.sol:244](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CErc20.sol#L244)
 
 ## incomplete comments
 * [CTokenDelegate.sol:22](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L22)
