@@ -8,13 +8,15 @@ Proof of Concept
 
     108   price = getChainlinkOraclePrice(fToken);
 
-https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracleV2.sol
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracleV2.sol#L108
 
 Below function is not solve above issue because it returns minimum of given two prices. 
 
     114   if (fTokenToUnderlyingPriceCap[fToken] > 0) {
     115   price = _min(price, fTokenToUnderlyingPriceCap[fToken]);
     116   }
+    
+https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracleV2.sol#L114
     
  Tools Used
     Vs code
