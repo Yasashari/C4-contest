@@ -76,6 +76,7 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cC
  Use debugged complier version . Also use more recent compiler version. 
  
 #### Affected Source Code
+Total instances : 19
 * [OndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L15)
 * [JumpRateModelV2.sol:1](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L1)
 * [IOndoPriceOracle.sol:15](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/IOndoPriceOracle.sol#L15)
@@ -102,7 +103,7 @@ The following methods have a lack of checks if the received argument is an addre
 specified in the constructor or initialize is different than address(0).
 
 #### Affected Source Code
-
+Total instances : 4
 * [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
 * [OndoPriceOracle.sol:106](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L106)
 * [OndoPriceOracle.sol:119](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L119)
@@ -111,11 +112,14 @@ specified in the constructor or initialize is different than address(0).
 ## LACK OF CHEKS FOR UNITS IN ORDER TO PREVENT SETTING DEFAULT VALUES. 
     In oder to prevent human errors its better to having a value for units rather than inizialize with 0 values.
     
+Total instances : 2
 * [OndoPriceOracle.sol:80](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracle.sol#L80)
 * [JumpRateModelV2.sol:59](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L59-L63)
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
 #### Affected Source Code
+Total instances : 7
+
 * [JumpRateModelV2.sol:171](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L171)
 * [cErc20ModifiedDelegator.sol:1200](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1200)
 * [CTokenCash.sol:357](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CTokenCash.sol#L357)
@@ -131,6 +135,8 @@ specified in the constructor or initialize is different than address(0).
     
  ## External & Public Functions should use mixedCase withot underscore
  #### Affected Source Code
+ 
+ Total instances : 32
  
 * [cErc20ModifiedDelegator.sol:548](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L548)
 * [cErc20ModifiedDelegator.sol:324](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L324)
@@ -172,6 +178,8 @@ specified in the constructor or initialize is different than address(0).
 ##  Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
 prefix)
 #### Affected Source Code
+Total instances : 7
+
 * [JumpRateModelV2.sol:29](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L29)
 * [cErc20ModifiedDelegator.sol:208](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L208)
 * [cErc20ModifiedDelegator.sol:213](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L213)
@@ -189,6 +197,9 @@ its better not to use assembly because it reduce readability & future updatabili
 
 Recommendation
 Consider removeing all assembly code and re-implement them in Solidity to make the code significantly more clean.
+
+Total instances : 7
+
 * [cErc20ModifiedDelegator.sol:1205](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1205)
 * [cErc20ModifiedDelegator.sol:1238](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1238)
 * [cErc20ModifiedDelegator.sol:1259](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cErc20ModifiedDelegator.sol#L1259)
@@ -198,17 +209,22 @@ Consider removeing all assembly code and re-implement them in Solidity to make t
 * [CCash.sol:244](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCash.sol#L244)
 
 ## incomplete comments
+
+Total instances : 4
 * [CTokenDelegate.sol:22](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L22)
 * [CTokenDelegate.sol:25](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L25)
 * [CCashDelegate.sol:22](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCashDelegate.sol#L22)
 * [CCashDelegate.sol:25](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCashDelegate.sol#L25)
 
 ## Unnecessary code(always false)
+Total instances : 3
+
 * [CTokenDelegate.sol:26](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cToken/CTokenDelegate.sol#L26)
 * [CCashDelegate.sol:26](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCashDelegate.sol#L26)
 * [CCashDelegate.sol:41](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CCashDelegate.sol#L41)
 
 ## Modifier and Events should top of the contract(Order of Layout)
+
 * [CTokenCash.sol:1434](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/tokens/cCash/CTokenCash.sol#L1434)
 
 For more read...
