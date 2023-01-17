@@ -26,7 +26,7 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPrice
     Use try/catch with latestRoundData() instead of calling it directly. In a scenario where the call reverts, the catch block can be used to call a
     fallback oracle or handle the error in any other suitable way. So Update [function getChainlinkOraclePrice](https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPriceOracleV2.sol#L277) in order to tackle above issue. 
     
-## UTILIZATIONRATE CAN BE OVERFLOW
+## DOS IN UTILIZATIONRATE 
     utilizationrate = borrows / (cash + borrows - reserves). if cash+ borrows ≈ reserves this goes to infinity so that utilizationrate reverts. 
     Also if cash + borrows < reserves same effet caused. 
     If utilizationrate reverts theser functions are also reverts.
@@ -42,7 +42,8 @@ https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/OndoPrice
     Vs code
  
  Recommended Mitigation Steps
-    Always check cash + borrows > reserves using require statement. 
+    add require statement in function utilizationRate() on  https://github.com/code-423n4/2023-01-ondo/blob/main/contracts/lending/JumpRateModelV2.sol#L116
+        require( cash + borrows > reserves )
  
  
  
