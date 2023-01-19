@@ -85,6 +85,43 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/ClearingHouse.sol#L4
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/ClearingHouse.sol#L51
 
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L28
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L32
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L50
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L54
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L58
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaVaultBase.sol#L62
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L229
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L234
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L239
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L244
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L252
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L259
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L345
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AstariaRouter.sol#L352
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/ICollateralToken.sol#L141
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaVaultBase.sol#L25
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaVaultBase.sol#L27
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaVaultBase.sol#L29
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaVaultBase.sol#L31
 
 
 #### Remove assembly for future updates
