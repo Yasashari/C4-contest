@@ -126,6 +126,12 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L70
 
 if your looping array get array length into cache and use UNCHECKED{++I} . Read more..https://hackmd.io/@totomanov/gas-optimization-loops
 
+#### Empty blocks should be removed or emit something
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L87
+
+
+
 
 
 
