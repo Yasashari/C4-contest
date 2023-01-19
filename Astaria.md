@@ -28,6 +28,18 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawProxy.sol#L2
     
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawProxy.sol#L281
 
+Tools Used 
+
+Vs code
+
+
+Recommended Mitigation Steps
+
+Define another set of equations when (1e18 - s.withdrawRatio) becomes negative in if statement. Here consider the (s.withdrawRatio - 1e18) and need to do mathematical
+modelling respectively. 
+
+
+
 
 
 
