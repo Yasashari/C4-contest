@@ -73,7 +73,35 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.so
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#L42
 
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/LienToken.sol#377
 
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/LienToken.sol#L381
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/CollateralToken.sol#L105
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/ClearingHouse.sol#L43
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/ClearingHouse.sol#L47
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/ClearingHouse.sol#L51
+
+
+
+#### Remove assembly for future updates
+its better not to use assembly because it reduce readability & future updatability of the code even though assembly reduce gas.
+
+Recommendation 
+
+Consider removeing all assembly code and re-implement them in Solidity to make the code significantly more clean.
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L30
+
+
+#### Revert without having any error message
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
 
 
 
@@ -81,9 +109,33 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.so
 
 #### Use Custom Errors
 Custom errors are more gas efficient than using require with a string explanation. So ideally you'd always use this over require.
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
+
+#### FUNCTIONS GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED PAYABLE
+
+if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as payable will lower the
+gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L70
+
+
+#### Loop optimization 
+
+if your looping array get array length into cache and use UNCHECKED{++I} . Read more..https://hackmd.io/@totomanov/gas-optimization-loops
+
+
+
+
+
+    
+    
+
+
+
+
 
 
 
