@@ -1,8 +1,10 @@
 ## DOS in claim function 
 
 liquidationWithdrawRatio is the ratio of withdrawing to remaining LPs for the current epoch boundary. Definition sources are given below. 
+
 Source:  https://docs.astaria.xyz/docs/smart-contracts/withdrawproxy
 Source: https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IWithdrawProxy.sol#L28
+
 if liquidationWithdrawRatio is above the 1e18 then (1e18 - s.withdrawRatio) is negative and so claim function revert. 
 
 Proof of Concept
