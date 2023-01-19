@@ -65,13 +65,13 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.so
  
 Affected Source Code
 
-https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#26
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#L26
 
-https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#30
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#L30
 
-https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#38
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#L38
 
-https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#42
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#L42
 
 
 
