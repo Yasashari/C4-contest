@@ -48,6 +48,7 @@ if owner enter wrong account address here then contract is in a risk.
     97  s.owner = newOwner;
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L95
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L97
 
 ## Tools Used
