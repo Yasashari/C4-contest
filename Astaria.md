@@ -12,6 +12,7 @@ Proof of Concept
 
 Lets consider withdrawing amount is 100.1WETH and remaining LPs amount is 100 wei 
 liquidationWithdrawRatio = 100.1e18/100 = 1.001e18 
+So (1e18 - s.withdrawRatio) is negative 
 
 i.e. this modelling not working when LPs withdraw approximately their total liquidy at once.
 
@@ -144,6 +145,16 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
 
+## Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
+prefix)
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L26
+
+
+For more read...
+    1. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
+
 
 
 ## Gas Report
@@ -167,14 +178,6 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L70
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L87
 
-## Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
-prefix)
-
-https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L26
-
-
-For more read...
-    1. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
 
