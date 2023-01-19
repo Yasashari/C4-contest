@@ -6,6 +6,13 @@ Source: https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/I
 if liquidationWithdrawRatio is above the 1e18 then (1e18 - s.withdrawRatio) is negative and so claim function revert. 
 
 Proof of Concept
+
+lets consider withdrawing amount is 100.1WETH and remaining LPs amount is 100 wei 
+liquidationWithdrawRatio = 100.1e18/100 = 1.001e18 
+
+i.e. this modelling not working when LPs withdraw approximately their total liquidy at once.
+
+
     260   (s.expected - balance).mulWadDown(1e18 - s.withdrawRatio)
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawProxy.sol#L260
@@ -18,10 +25,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawProxy.sol#L2
     
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawProxy.sol#L281
 
-lets consider withdrawing amount is 100.1WETH and remaining LPs amount is 100 wei 
-liquidationWithdrawRatio = 100.1e18/100 = 1.001e18 
 
-i.e. this modelling not working when LPs withdraw approximately their total liquidy at once.
 
 
 
