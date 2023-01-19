@@ -61,7 +61,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.so
      
  ## QA Report
  
- #### External & Public Functions should use mixedCase withot underscore
+ ## External & Public Functions should use mixedCase withot underscore
  
 Affected Source Code
 
@@ -128,7 +128,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaV
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
-#### Remove assembly for future updates
+## Remove assembly for future updates
 its better not to use assembly because it reduce readability & future updatability of the code even though assembly reduce gas.
 
 Recommendation 
@@ -138,7 +138,7 @@ Consider removeing all assembly code and re-implement them in Solidity to make t
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L30
 
 
-#### Revert without having any error message
+## Revert without having any error message
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
 
@@ -167,7 +167,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L70
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L87
 
-### Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
+## Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
 prefix)
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L26
