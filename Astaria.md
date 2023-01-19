@@ -123,6 +123,10 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaV
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/interfaces/IAstariaVaultBase.sol#L31
 
+ For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
 
 #### Remove assembly for future updates
 its better not to use assembly because it reduce readability & future updatability of the code even though assembly reduce gas.
