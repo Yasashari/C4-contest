@@ -39,6 +39,24 @@ Define another set of equations when (1e18 - s.withdrawRatio) becomes negative i
 modelling respectively. 
 
 
+## NO TRANSFER OWNERSHIP PATTERN
+
+if owner enter wrong account address here then contract is in a risk.
+
+    95  function transferOwnership(address newOwner) public virtual requiresAuth {
+    
+    97  s.owner = newOwner;
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L95
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L97
+
+## Tools Used
+    VS Code 
+
+## Recommended Mitigation Steps
+
+     To avoid that one setup two step process transfer ownership and accept it by new owner.
+     
 
 
 
