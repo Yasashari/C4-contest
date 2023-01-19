@@ -66,8 +66,11 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.so
 Affected Source Code
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#26
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#30
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#38
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#42
 
 
@@ -79,6 +82,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.so
 #### Use Custom Errors
 Custom errors are more gas efficient than using require with a string explanation. So ideally you'd always use this over require.
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
+
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
 
 
