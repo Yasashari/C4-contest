@@ -58,6 +58,28 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.so
 
      To avoid that one setup two step process transfer ownership and accept it by new owner.
      
+     
+ ## QA Report
+ 
+ #### External & Public Functions should use mixedCase withot underscore
+ 
+Affected Source Code
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#26
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#30
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#38
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/WithdrawVaultBase.sol#42
+
+
+
+
+
+## Gas Report
+
+#### Use Custom Errors
+Custom errors are more gas efficient than using require with a string explanation. So ideally you'd always use this over require.
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
 
 
 
