@@ -130,6 +130,11 @@ if your looping array get array length into cache and use UNCHECKED{++I} . Read 
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/BeaconProxy.sol#L87
 
+## Constants should be named with all capital letters with underscores separating words.(For Internal or private constants it should be started with underscore
+prefix)
+
+https://github.com/code-423n4/2023-01-astaria/blob/main/src/AuthInitializable.sol#L26
+
 
 
 
