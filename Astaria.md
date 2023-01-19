@@ -114,7 +114,7 @@ https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L65
 
 https://github.com/code-423n4/2023-01-astaria/blob/main/src/Vault.sol#L71
 
-#### FUNCTIONS GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED PAYABLE
+#### Functions guaranteed to revert when called by normal users can be marked payable
 
 if a function modifier such as onlyOwner is used, the function will revert if a normal user tries to pay the function. Marking the function as payable will lower the
 gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
