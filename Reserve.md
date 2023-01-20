@@ -62,13 +62,13 @@ Recommended Mitigation Steps
 consider calculate like this, Basically do the multipication first and devide eventually. ( Basically this one. A^(b/c)  = A^b/A^c)
 
 
-numPeriods = uint48((block.timestamp) - lastPayout) / period
-consider x = uint48((block.timestamp) - lastPayout)
-and  y  = period
- so numPeriods(N) = x/y
+    numPeriods = uint48((block.timestamp) - lastPayout) / period
+    consider x = uint48((block.timestamp) - lastPayout)
+    and  y  = period
+    so numPeriods(N) = x/y
  
- payoutRatio = (1 - (1-r)^N) 
-             = 1 -((1-r)^x)/((1-r)^y)
+    payoutRatio = (1 - (1-r)^N) 
+                = 1 -((1-r)^x)/((1-r)^y)
  
  
 
