@@ -28,6 +28,16 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHand
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L665
 
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#26
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#27
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#28
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#L44
+
+
+
 
 
 
@@ -136,6 +146,13 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHand
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L707
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L725
+
+
+ ## SPLITTING REQUIRE() STATEMENTS THAT USE && SAVES GAS
+ 
+ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Deployer.sol#L49
+ 
+ 
 
 
 
