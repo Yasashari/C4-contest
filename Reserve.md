@@ -1,6 +1,6 @@
 ## Significant roundoff error in melt() function
 
-significant roundoff error is caused when calculating numPeriods.
+Significant roundoff error is caused when calculating numPeriods.
 
 Proof of Concept
 
@@ -28,21 +28,21 @@ https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94b
     lastPayout = Y 
     block.timestamp = Y + 1999 
 
-So numPeriods = uint48((block.timestamp) - lastPayout) / period
+    So numPeriods   = uint48((block.timestamp) - lastPayout) / period
 
-              = (Y + 1999 - Y)/1000
+                    = (Y + 1999 - Y)/1000
               
-              = 1999/1000 = 1
+                    = 1999/1000 = 1
               
  But in this situation numPeriods should be approximatly 2 .
  
  this error propogate futher such that , 
  
- payoutRatio = (1 - (1-r)^N) 
+        payoutRatio = (1 - (1-r)^N) 
  
- payoutRatio shoud be = (1 - (1-r)^2)
+        payoutRatio shoud be = (1 - (1-r)^2)
  
- But payoutRatio now = (1 - (1-r)^1)
+        But payoutRatio now = (1 - (1-r)^1)
  
  Also it affected to amount , lastPayout , lastPayoutBal . 
  
@@ -53,11 +53,11 @@ https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94b
 Because of above line these wrong calculated values are accumulated in lastPayout . If someone call this function frequntly such as (lastPayout + 1.9999period) time
 interval  error is going to be huge. 
 
-Tools Used
+## Tools Used
 
 Vs code
 
-Recommended Mitigation Steps
+## Recommended Mitigation Steps
 
 consider calculate like this, Basically do the multipication first and devide eventually. ( Basically this one. A^(b/c)  = A^b/A^c)
 
