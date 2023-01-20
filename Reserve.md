@@ -1,4 +1,4 @@
-Significant roundoff error in melt() function
+## Significant roundoff error in melt() function
 
 significant roundoff error is caused when calculating numPeriods.
 
@@ -28,8 +28,27 @@ Proof of Concept
     block.timestamp = Y + 1999 
 
 So numPeriods = uint48((block.timestamp) - lastPayout) / period
+
               = (Y + 1999 - Y)/1000
+              
               = 1999/1000 = 1
+              
+ But in this situation numPeriods should be approximatly 2 .
+ 
+ this error propogate futher such that , 
+ payoutRatio = (1 - (1-r)^N) 
+ payoutRatio shoud be = (1 - (1-r)^2)
+ But payoutRatio now = (1 - (1-r)^1)
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
 
 
 
