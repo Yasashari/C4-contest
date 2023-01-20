@@ -1,4 +1,4 @@
-## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
+## Internal and private functions should have an underscore prefix with mixedCase(Naming convention). Internal and private variable with same convention. 
 Affected Source Code
 Total instances : 
 
@@ -9,6 +9,48 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegis
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#248
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#154
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#68
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L75
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L87
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L128
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L132
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L139
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L356
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L650
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L665
+
+
+
+
+
+
+
+
+
+
+
+
+## No visibility set
+Affected Source Code
+Total instances : 
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L40
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L42
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L44
+
+
+
 
 
 
@@ -60,6 +102,52 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegis
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#L221
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#L238
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L70
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L78
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L218
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#l227
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L262
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L286
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L337
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L397
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L416
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L437
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L548
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L553
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L586
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L597
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L611
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L707
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L725
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
