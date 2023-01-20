@@ -50,8 +50,8 @@ https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94b
         
 https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94bc992903158/contracts/p1/Furnace.sol#L81
         
-Because of above line these wrong calculated values are accumulated in lastPayout . If someone call this function frequntly such as (lastPayout + 1.9999period) time
-interval  error is going to be huge. 
+Because of above line these wrong calculated values are accumulated in lastPayout . If someone call this function frequntly such as (lastPayout + 1.9999period) in time
+intervals , eventually error is going to be huge. 
 
 ## Tools Used
 
