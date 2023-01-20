@@ -10,7 +10,7 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingMan
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#154
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#68
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L68
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L75
 
@@ -28,13 +28,23 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHand
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L665
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#26
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#L26
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#27
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#L27
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#28
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#L28
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol#L44
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol#L17
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RevenueTrader.sol#L20
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RevenueTrader.sol#L21
+
+
+
+
 
 
 
@@ -146,6 +156,13 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHand
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L707
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L725
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol#L108
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol#L133
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol#L143
+
 
 
  ## SPLITTING REQUIRE() STATEMENTS THAT USE && SAVES GAS
