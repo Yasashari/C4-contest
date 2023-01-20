@@ -145,6 +145,42 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHand
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L44
 
 
+## Contract and library names should also match their filenames
+
+But these sol files contract name and its file name is different
+
+Affected Source Code
+Total instances : 11
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegistry.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Broker.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Deployer.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Furnace.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Main.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RevenueTrader.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSRVotes.sol
+
+For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#contract-and-library-names)
+
+
+
 
 ## Gas Report
 
@@ -154,10 +190,10 @@ for loops j++ and i++ can be set to UNCHECKED{++j} and UNCHECKED{++i} including 
 overflow. So no need to check array.length overflow every iteration.    
 
 Recommended Mitigation Steps 
-    UNCHECKED{
-    ++i ;
-    array.length ;
-    }
+     UNCHECKED{
+     ++i ;
+     array.length ;
+     }
 
 
 Affected Source Code
