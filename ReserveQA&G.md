@@ -42,6 +42,85 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RevenueTra
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RevenueTrader.sol#L21
 
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L59
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L60
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L61
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L62
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L72
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L76
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L77
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L98
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L102
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L344
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L655
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L737
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L56
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L60
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L61
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L62
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L73
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L83
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L84
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L150
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L574
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L586
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L596
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSRVotes.sol#L49
+
+## External & Public Functions should use mixedCase withot underscore
+
+Affected Source Code
+Total instances : 
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L791
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -163,11 +242,55 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributo
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Distributor.sol#L143
 
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L270
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L303
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L329
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L334
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L674
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L683
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L711
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L757
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L767
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L793
+
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L802
+
+
+
+
+
+
+
 
 
  ## SPLITTING REQUIRE() STATEMENTS THAT USE && SAVES GAS
  
  https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Deployer.sol#L49
+ 
+ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L590
+ 
+ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L623
+ 
+ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L741
+ 
+ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/RToken.sol#L813
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 
