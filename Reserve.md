@@ -1,6 +1,6 @@
 ## Significant roundoff error in melt() function
 
-Significant roundoff error is caused when calculating numPeriods.
+Significant roundoff error is caused when calculating numPeriods. Also frequent calling of this function caused sever error. 
 
 Proof of Concept
 
