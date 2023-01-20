@@ -6,9 +6,9 @@ https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegis
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegistry.sol#L22
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#248
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#L248
 
-https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#154
+https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BackingManager.sol#L154
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L68
 
