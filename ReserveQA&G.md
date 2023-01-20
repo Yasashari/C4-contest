@@ -1,6 +1,6 @@
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention). Internal and private variable with same convention. 
 Affected Source Code
-Total instances : 
+Total instances : 56
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegistry.sol#L16
 
@@ -116,88 +116,33 @@ https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94b
 
 https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94bc992903158/contracts/p1/mixins/Trading.sol#L111
 
+ For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+
 
 
 ## External & Public Functions should use mixedCase withot underscore
 
 Affected Source Code
-Total instances : 
+Total instances : 1
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/StRSR.sol#L791
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
 ## No visibility set
 Affected Source Code
-Total instances : 
+Total instances : 3
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L40
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L42
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/BasketHandler.sol#L44
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -216,7 +161,7 @@ Recommended Mitigation Steps
 
 
 Affected Source Code
-Total instances :
+Total instances : 42
 
 https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/AssetRegistry.sol#L38
 
@@ -303,16 +248,10 @@ https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94b
 https://github.com/reserve-protocol/protocol/blob/df7ecadc2bae74244ace5e8b39e94bc992903158/contracts/p1/mixins/RewardableLib.sol#L73
 
 
-
-
-
-
-
-
-
-
-
  ## SPLITTING REQUIRE() STATEMENTS THAT USE && SAVES GAS
+ 
+ Affected Source Code
+Total instances : 5
  
  https://github.com/reserve-protocol/protocol/blob/master/contracts/p1/Deployer.sol#L49
  
