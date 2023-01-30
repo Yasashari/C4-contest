@@ -103,6 +103,20 @@ https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c21658
     103    _safeMint(to_, newTokenID);
     104    }
 
+## Tools Used
+    Vs code
+
+## Recommended Mitigation Steps
+Use whenNotPaushed modifer to mint function . Activate it when minting is required. After that deactivate it.
+
+        modifier whenNotPaused() {
+        require(!paused(), "Contract paused");
+        _;
+        }
+    
+        function mint(address to_, string memory questId_) public onlyMinter whenNotPaused {
+
+
 
     
     
