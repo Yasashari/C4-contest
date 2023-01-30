@@ -8,7 +8,7 @@ https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c21658
 
 The best practices to avoid Reentrancy weaknesses are:
 
-Make sure all internal state changes are performed before the [transferRewards]{https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Quest.sol#L114} is executed. (Checks-Effects-Interactions pattern)
+Make sure all internal state changes are performed before the [transferRewards](https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Quest.sol#L114) is executed. (Checks-Effects-Interactions pattern)
 
 
 
