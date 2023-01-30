@@ -79,6 +79,16 @@ Total instances :
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/QuestFactory.sol#L152
 
 
+## Front run of setMinterAddress function
+In case of changing the minter address by Owner, minter can front run setMinterAddress and execute mint function as he wish before changing
+his address.
+
+
+
+
+
+
+
 
 
 
