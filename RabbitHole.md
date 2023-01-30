@@ -1,1 +1,24 @@
+## QA Report
+#### Floating Pragma
+
+Use debugged complier version . Also use more recent compiler version.
+
+Affected Source Code
+Total instances : 
+
+https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Erc20Quest.sol#L2
+
+
+#### Missing Zero address checks
+
+Affected Source Code
+Total instances : 
+
+https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Erc20Quest.sol#L39
+
+
+
+
+
+
 
