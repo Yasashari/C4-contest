@@ -71,7 +71,7 @@ Total instances : 1
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Quest.sol#L24
 
 For more read...
-    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#local-and-state-variable-names)
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
