@@ -18,7 +18,7 @@ Make sure all internal state changes are performed before the [transferRewards](
 Use debugged complier version . Also use more recent compiler version.
 
 Affected Source Code
-Total instances : 
+Total instances : 9
 
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Erc20Quest.sol#L2
 
@@ -41,14 +41,14 @@ https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c21658
 ## Typo error
 
 Affected Source Code
-Total instances : 
+Total instances : 1
 
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/QuestFactory.sol#L176 . (Word : remove)
 
 ## Missing zero address checks
 
 Affected Source Code
-Total instances : 
+Total instances : 6
 
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Erc20Quest.sol#L39
 
@@ -66,17 +66,25 @@ https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c21658
 ## Private state variables should have an underscore prefix
 
 Affected Source Code
-Total instances : 
+Total instances : 1
 
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/Quest.sol#L24
+
+For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#other-recommendations)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
 ## Internal and private functions should have an underscore prefix with mixedCase(Naming convention)
 
 Affected Source Code
-Total instances :
+Total instances : 1
 
 https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/QuestFactory.sol#L152
+
+ For more read...
+    1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
+    2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
 
 
 ## Front run of setMinterAddress function
