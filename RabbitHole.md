@@ -83,6 +83,35 @@ https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c21658
 In case of changing the minter address by Owner, minter can front run setMinterAddress and execute mint function as he wish before changing
 his address.
 
+#### Proof of Concept
+
+https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/RabbitHoleReceipt.sol#L83
+
+
+    83  function setMinterAddress(address minterAddress_) public onlyOwner {
+    84    minterAddress = minterAddress_;
+    85    emit MinterAddressSet(minterAddress_);
+    86    }
+
+https://github.com/rabbitholegg/quest-protocol/blob/8c4c1f71221570b14a0479c216583342bd652d8d/contracts/RabbitHoleReceipt.sol#L98
+
+    98  function mint(address to_, string memory questId_) public onlyMinter {
+    99    _tokenIds.increment();
+    100    uint newTokenID = _tokenIds.current();
+    101    questIdForTokenId[newTokenID] = questId_;
+    102    timestampForTokenId[newTokenID] = block.timestamp;
+    103    _safeMint(to_, newTokenID);
+    104    }
+
+
+    
+    
+    
+    
+    
+
+
+
 
 
 
