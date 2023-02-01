@@ -114,9 +114,12 @@ https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#56
 
 https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#57
 
-Above roundoff value again multiplied by 3 times when calculating a, b, c, d . 
+This FullMath.mulDiv(amount0, 1e18, liquidity) roundoff value again multiplied by 3 times when calculating a, b, c, d . 
 Thats mean if consider calculating a
+
+
         a = FullMath.mulDiv(amount0, 1e18, liquidity)*token0Scale*scale0 * 1e18 
+        
 This cause even worse because roundoff value multiply by another 3 factors so finally its ended up with significant different value which it
 should be. 
 
