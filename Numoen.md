@@ -83,6 +83,35 @@ https://github.com/code-423n4/2023-01-numoen/blob/main/src/periphery/UniswapV2/l
  For more read...
     1. [Soliditydocs](https://docs.soliditylang.org/en/v0.8.15/style-guide.html#function-names)
     2. [Solidity Style](https://www.notion.so/Solidity-Style-44daebebfbd645b0b9cbad7075ba42fe)
+    
+
+Significant roundoff error in invariant() function
+
+When calculating scale0 and scale1 there is a significant roundoff error due to initial division (uint256 liquidity).
+        
+        56  FullMath.mulDiv(amount0, 1e18, liquidity)
+Above roundoff value again multiplied by 3 times when calculating a, b, c, d . 
+Thats mean if consider calculating a
+        a = FullMath.mulDiv(amount0, 1e18, liquidity)*token0Scale*scale0 * 1e18 
+This cause even worse because roundoff value multiply by another 3 factors so finally its ended up with significant different value which it
+should be. 
+
+## Tools Used
+Vs code
+
+## Recommended Mitigation Steps
+Perform all the multiplication first and divide eventually. 
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
 
 
 
