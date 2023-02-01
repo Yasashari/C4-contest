@@ -110,9 +110,9 @@ When calculating scale0 and scale1 there is a significant roundoff error due to 
         67  }
 
 
-https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#56
+https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#L56
 
-https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#57
+https://github.com/code-423n4/2023-01-numoen/blob/main/src/core/Pair.sol#L57
 
 This FullMath.mulDiv(amount0, 1e18, liquidity) roundoff value again multiplied by 3 times when calculating a, b, c, d . 
 Thats mean if consider calculating a
