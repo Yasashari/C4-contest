@@ -64,7 +64,12 @@ This is affecting _isBalanceEnough function
                 if (spent > balance) {
                     return false;
                 }
-Due to this roundoff error it could be return false here. (spent > balance). But Infact balance is able to cover the spent.
+Due to this roundoff error it could be return false here. (spent > balance). But in some cases balance could be able to cover the spent.Also
+it could be even worse due to this adding rounded off values.
+
+         755    spent += _drippedAmt(amtPerSec, start, end);
+         
+
 
 ## Tools Used
 Vs code
