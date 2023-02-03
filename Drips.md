@@ -1,6 +1,6 @@
 ## Mathematical Modelling Cause a Significant Roundoff Error
 
-function _drippedAmt calculates the ended cycles. when calculating ended cycles it takes two divisions which cause round off error. 
+Function _drippedAmt calculates the ended cycles. when calculating ended cycles it takes two divisions which cause round off error. 
 
 Let's consider this scenario.
 
