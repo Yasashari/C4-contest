@@ -73,6 +73,11 @@ it could be even worse due to this adding rounded off values.
          
 https://github.com/code-423n4/2023-01-drips/blob/main/src/Drips.sol#L755
 
+
+         495     amt += _drippedAmt(receiver.config.amtPerSec(), start, end);
+         
+https://github.com/code-423n4/2023-01-drips/blob/main/src/Drips.sol#L495
+
 ## Tools Used
 Vs code
 
