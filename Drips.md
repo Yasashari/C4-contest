@@ -4,6 +4,8 @@ function _drippedAmt calculate a ended cycles. when calculating ended cycles it 
 
 Lets consider this senario. 
 
+Deposited token - WBTC
+
 amtPerSec =  100000000 = 10^8 (Here consider the 0.1 wei)
 
 start = 1675444689
@@ -62,7 +64,22 @@ This is affecting _isBalanceEnough function
                 if (spent > balance) {
                     return false;
                 }
-Due to this roundoff error it could be return false here. (spent > balance). But Infact balance is able to cover the spent. 
+Due to this roundoff error it could be return false here. (spent > balance). But Infact balance is able to cover the spent.
+
+## Tools Used
+Vs code
+
+## Recommended Mitigation Steps
+
+Use below equation to calculate _drippedAmt
+
+    drippedAmt  =  (end - start) * amtPerSec
+
+if need more precision 
+    
+    drippedAmt  =  (end - start) * amtPerSec /  _AMT_PER_SEC_MULTIPLIER
+    
+
     
 
 
