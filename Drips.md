@@ -4,17 +4,17 @@ function _drippedAmt calculate a ended cycles. when calculating ended cycles it 
 
 Lets consider this senario. 
 
-Deposited token - WBTC
+    Deposited token - WBTC
 
-amtPerSec =  100000000 = 10^8 (Here consider the 0.1 wei)
+    amtPerSec =  100000000 = 10^8 (Here consider the 0.1 wei)
 
-start = 1675444689
+    start = 1675444689
 
-end =  1675444700
+    end =  1675444700
 
-( end - start = 11)
+    ( end - start = 11)
 
-cycleSecs = 10
+    cycleSecs = 10
 
 with above conditions when calculating the ended cycles with the equation used line 1104
 
@@ -48,6 +48,8 @@ amt =  2 wei
 
 But amt should be = (end - start)x amtPerSec  = 11x 10^8 = 1.1x 10^9 = 1.1 wei
 
+https://github.com/code-423n4/2023-01-drips/blob/main/src/Drips.sol#L1104
+
 This is affecting _isBalanceEnough function 
 
         745   for (uint256 i = 0; i < configsLen; i++) {
@@ -69,7 +71,7 @@ it could be even worse due to this adding rounded off values.
 
          755    spent += _drippedAmt(amtPerSec, start, end);
          
-
+https://github.com/code-423n4/2023-01-drips/blob/main/src/Drips.sol#L755
 
 ## Tools Used
 Vs code
