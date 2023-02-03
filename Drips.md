@@ -1,8 +1,8 @@
 ## Mathematical Modelling Cause a Significant Roundoff Error
 
-function _drippedAmt calculate a ended cycles. when calculating ended cycles it takes two divisions which cause round off error. 
+function _drippedAmt calculates the ended cycles. when calculating ended cycles it takes two divisions which cause round off error. 
 
-Lets consider this senario. 
+Let's consider this scenario.
 
     Deposited token - WBTC
 
@@ -66,7 +66,7 @@ This is affecting _isBalanceEnough function
                 if (spent > balance) {
                     return false;
                 }
-Due to this roundoff error it could be return false here. (spent > balance). But in some cases balance could be able to cover the spent.Also
+Due to this roundoff error it could be returned false here. (spent > balance). But in some cases balance could be able to cover the spent.Also
 it could be even worse due to this adding rounded off values.
 
          755    spent += _drippedAmt(amtPerSec, start, end);
