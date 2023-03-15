@@ -13,6 +13,8 @@ The following methods have a lack of checks if the received argument is an addre
 
 Affected Source Code
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L588
+
+
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1710
 
 
