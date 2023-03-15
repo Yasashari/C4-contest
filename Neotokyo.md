@@ -1,6 +1,7 @@
 # Significant roundoff error in bonusPoints calculation
 
-If some user deposit anything less than 2 Bytes tokens then bonusPoints going to be zero. Significant round off error occurred here. There are two instances occured as shown below. 
+If some user deposit anything less than 2 Bytes tokens then bonusPoints going to be zero. Significant round off error occurred here. There are two instances
+that occurred as shown below. 
 
 Proof of Concept
 
@@ -13,7 +14,8 @@ https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTo
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1098
 
 
-lets consider this senario.
+Let's consider this scenario.
+
 
     203   uint256 constant private _BYTES_PER_POINT = 200 * 1e18;
 
@@ -27,7 +29,7 @@ lets consider this senario.
 
 # Recommended Mitigation Steps
 
-  Here there are two set of mitigation are possible. 
+  Here there are two sets of mitigation possible.
   
   
   Points for staking S1 tokens, S2 tokens  and LP tokens as follows.
@@ -54,8 +56,7 @@ https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTo
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1077
 
 
-When calculating above points multiply each point by  correction factor (1e18)  and get the total point then devided by correction
-factor. 
+When calculating the above points multiply each point by correction factor (1e18) and get the total point then divided by same correction factor.
 
 	1077  uint256 bonusPoints = (amount * 100 * 1e18 / _BYTES_PER_POINT);
 
@@ -71,12 +72,14 @@ factor.
       1388    uint256 share = points * _PRECISION / pool.totalPoints * totalReward / 1e18 ;
       
  
-Another option is prevent sending anything less than 2 Bytes tokens using revert statement.  
+
+
+Another option is to prevent sending anything less than 2 Bytes tokens using revert statements.
 
 
 # configureLP function should check LP stakers present before changing LP address.
 
-Permitted user allow to change LP address when lpLocked is false. So this does not follow the comments above. 
+Permitted users are allowed to change LP address when lpLocked is false. So this does not follow the comments above.
 
 # Proof of concept
 
@@ -96,7 +99,7 @@ Permitted user allow to change LP address when lpLocked is false. So this does n
 	
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1708
 
-Its better to check whether there is a LP stakers or not before changing its address.
+It's better to check whether there are LP stakers or not before changing its address.
 
 
 # Tools Used
