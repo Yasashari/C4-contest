@@ -57,6 +57,8 @@ https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTo
 When calculating above points multiply each point by  correction factor (1e18)  and get the total point then devided by correction
 factor. 
 
+	1077  uint256 bonusPoints = (amount * 100 * 1e18 / _BYTES_PER_POINT);
+
       968   citizenStatus.points =
 				identityPoints * vaultMultiplier * timelockMultiplier /
 				_DIVISOR / _DIVISOR * 1e18 ; 
@@ -69,7 +71,7 @@ factor.
       1388    uint256 share = points * _PRECISION / pool.totalPoints * totalReward / 1e18 ;
       
  
-Another option is reverted anything less than 2 Bytes token deposits using revert statement.  
+Another option is prevent sending anything less than 2 Bytes tokens using revert statement.  
 
 
 # configureLP function should check LP stakers present before changing LP address.
