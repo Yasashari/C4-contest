@@ -116,8 +116,7 @@ It's better to check whether there are LP stakers or not before changing its add
 
 
 
-Use this before changing its address. 
-
+Check the LP tokens totalPoints and if it is not 0 then revert the function. 
 
 
 
