@@ -95,7 +95,7 @@ Its better to check whether there is a LP stakers or not before changing its add
 
 # Recommended Mitigation Steps
 
-PoolData storage pool = _pools[AssetType.LP];
+	PoolData storage pool = _pools[AssetType.LP];
 		if (pool.totalPoints != 0) { 
 		
 		revert LPstakerExist(); 
