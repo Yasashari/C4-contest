@@ -68,6 +68,52 @@ factor.
 Another option is reverted anything less than 2 Bytes token deposits using revert statement.  
 
 
+# configureLP function should check LP stakers present before changing LP address.
+
+Permitted user allow to change LP address when lpLocked is false. So this does not follow the comments above. 
+
+# Proof of concept
+
+Extreme care must be taken to avoid doing this if there are any LP stakers, lest staker funds be lost. It is recommended that `lockLP` be invoked.
+
+	1708	function configureLP (
+	1709			address _lp
+	1710		) external hasValidPermit(UNIVERSAL, CONFIGURE_LP) { //@@ address 0 check
+	1711			if (lpLocked) {
+	1712				revert LockedConfigurationOfLP();
+	1713			}
+	1714			LP = _lp;
+	1715		}
+	
+https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1708
+
+Its better to check whether there is a LP stakers or not before changing its address.
+
+
+# Tools Used
+    Vs code
+
+# Recommended Mitigation Steps
+
+PoolData storage pool = _pools[AssetType.LP];
+		if (pool.totalPoints != 0) { 
+		
+		revert LPstakerExist(); 
+		}
+
+
+
+Use this before changing its address. 
+
+
+
+
+
+
+
+		
+
+
     
       
  
