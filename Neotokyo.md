@@ -60,6 +60,8 @@ https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTo
 When calculating the above points multiply each point by correction factor (1e18) and get the total point then divided by same correction factor.
 
 	1077  uint256 bonusPoints = (amount * 100 * 1e18 / _BYTES_PER_POINT);
+	
+	1098  uint256 bonusPoints = (amount * 100 * 1e18 / _BYTES_PER_POINT);
 
       968   citizenStatus.points =
 				identityPoints * vaultMultiplier * timelockMultiplier /
