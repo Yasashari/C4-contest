@@ -58,7 +58,7 @@ Then this getReward function is invoked.
       1673    IByteContract(BYTES).getReward(msg.sender);
       
 According to the assetType pass here (4) there is no function to excute here. default {} is not implemented . But it should be
-updated his withdrawal of S1 S2 or LP token. But either one of the S1 S2 LP  withdrawal functions should be invoked here.  
+updated his withdrawal of S1 S2 or LP token. But none of the S1 S2 LP  withdrawal functions are invoked here.  
 
              switch _assetType
                     case 0 {
@@ -72,6 +72,15 @@ updated his withdrawal of S1 S2 or LP token. But either one of the S1 S2 LP  wit
                     }
                     default {}
                 }
+                
+ # Tools Used
+    Vs code
+
+# Recommended Mitigation Steps
+
+         1668         if (uint8(_assetType) == 2 || uint8(_assetType) > 3) {
+         
+ 
                 
                 
                 
