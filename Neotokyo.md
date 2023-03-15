@@ -46,9 +46,13 @@ and Bonus point
       1077  uint256 bonusPoints = (amount * 100 / _BYTES_PER_POINT);
       
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L968
+
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1022
+
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1155
+
 https://github.com/code-423n4/2023-03-neotokyo/blob/main/contracts/staking/NeoTokyoStaker.sol#L1077
+
 
 When calculating above points multiply each point by  correction factor (1e18)  and get the total point then devided by correction
 factor. 
@@ -74,7 +78,10 @@ Permitted user allow to change LP address when lpLocked is false. So this does n
 
 # Proof of concept
 
-Extreme care must be taken to avoid doing this if there are any LP stakers, lest staker funds be lost. It is recommended that `lockLP` be invoked.
+	1701	This function allows a permitted user to configure the LP token contract 
+	1702	address. Extreme care must be taken to avoid doing this if there are any LP 
+	1703	stakers, lest staker funds be lost. It is recommended that `lockLP` be 
+	1704	invoked.
 
 	1708	function configureLP (
 	1709			address _lp
