@@ -1,6 +1,21 @@
-# Always revert due to not defining inequality properly. 
+YasX
 
-# Proof of Concept
+medium
+
+
+## Always revert due to not defining inequality properly. 
+
+## Summary
+
+DOS in getAdjustedLongAndShortTokenAmounts() function due to not setting inequality properly. 
+
+
+## Vulnerability Detail
+
+getAdjustedLongAndShortTokenAmounts() function is always revert . Reason is  diff is always negative with current implementation. 
+(diff is zero only if poolLongTokenAmount = poolShortTokenAmount). So it will revert the function.
+
+## Code Snippet
 
       392      if (poolLongTokenAmount < poolShortTokenAmount) {
       393                 uint256 diff = poolLongTokenAmount - poolShortTokenAmount;
@@ -13,13 +28,15 @@ https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082
 
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L402
 
-Here diff is always negative(zero only if poolLongTokenAmount = poolShortTokenAmount). So it will revert the function.
+## Impact
+getAdjustedLongAndShortTokenAmounts() function is always revert . So it will not return adjustedLongTokenAmount and adjustedShortTokenAmount
+as expected. 
 
-Tools Used
+## Tools Used
 
 Manual auditing 
 
-# Recommended Mitigation Steps
+## Recommended Mitigation Steps
 
 diff should be declared in a other way. 
 
