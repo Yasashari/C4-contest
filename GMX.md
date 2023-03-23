@@ -12,7 +12,7 @@ DOS in getAdjustedLongAndShortTokenAmounts() function due to not setting inequal
 
 ## Vulnerability Detail
 
-getAdjustedLongAndShortTokenAmounts() function is always revert . Reason is  diff is always negative with current implementation. 
+getAdjustedLongAndShortTokenAmounts() function is always reverted . Reason is diff is always negative with current implementation. 
 (diff is zero only if poolLongTokenAmount = poolShortTokenAmount). So it will revert the function.
 
 ## Code Snippet
@@ -29,7 +29,7 @@ https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L402
 
 ## Impact
-getAdjustedLongAndShortTokenAmounts() function is always revert . So it will not return adjustedLongTokenAmount and adjustedShortTokenAmount
+getAdjustedLongAndShortTokenAmounts() function is always reverted . So it will not return adjustedLongTokenAmount and adjustedShortTokenAmount
 as expected. 
 
 ## Tools Used
