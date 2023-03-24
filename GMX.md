@@ -42,6 +42,13 @@ ExchangeRouter contract
 
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/router/ExchangeRouter.sol#L115
 
+Then orderKeeper will attempt to execute this deposit in the DepositHandler contract
+
+![image](https://user-images.githubusercontent.com/118436384/227443982-2df66b97-99ad-47a3-874c-8c7c364cd65e.png)
+
+
+
+
 
 
 ## Tools Used
