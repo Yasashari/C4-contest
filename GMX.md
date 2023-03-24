@@ -40,6 +40,8 @@ ExchangeRouter contract
 
 ![image](https://user-images.githubusercontent.com/118436384/227443003-c926ea16-c32c-4dc6-8645-2a5fa9801081.png)
 
+https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/router/ExchangeRouter.sol#L115
+
 
 
 ## Tools Used
