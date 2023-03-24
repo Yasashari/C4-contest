@@ -3,7 +3,8 @@ BPZ
 High
 
 
-## Always revert due to not defining inequality properly. 
+## Always revert due to not defining inequality properly. Eventually it DOS when shortToken address = longToken address. So No user can
+deposit anymore because of the flawed conditional. 
 
 ## Summary
 
