@@ -48,6 +48,11 @@ Then orderKeeper will attempt to execute this deposit in the DepositHandler cont
 
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/exchange/DepositHandler.sol#L92
 
+_executeDeposit function is then invoked which invokes ExecuteDepositUtils.executeDeposit():
+
+![image](https://user-images.githubusercontent.com/118436384/227445886-1b35d296-84d0-43ce-ba0a-4ae9da13c29c.png)
+
+
 
 
 
