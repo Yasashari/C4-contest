@@ -61,10 +61,12 @@ getAdjustedLongAndShortTokenAmounts will be invoked:
 
 
 
+Then, with-in getAdjustedLongAndShortTokenAmounts, if for the selected market (WETH/WETH) poolLongTokenAmount < poolShortTokenAmount, the
+transaction will revert due then reason mention above. 
 
+![image](https://user-images.githubusercontent.com/118436384/227448209-aa596cab-59f0-416e-b0f6-6bdacfb7743e.png)
 
-
-
+https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L393
 
 ## Tools Used
 
