@@ -23,10 +23,17 @@ getAdjustedLongAndShortTokenAmounts() function is always reverted . Reason is di
       401      } else {
       402      uint256 diff = poolShortTokenAmount - poolLongTokenAmount;
    
+   Also here adjustedLongTokenAmount is not assigend properly. (Not assigning here. Just substraction only)
+
+      406.        adjustedLongTokenAmount - longTokenAmount - adjustedShortTokenAmount;
+   
    
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L393
 
 https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L402
+
+https://github.com/0x00012345/gmx-synthetics/blob/8028cb8022b85174be861b311f1082b5b76239df/contracts/deposit/ExecuteDepositUtils.sol#L406
+
 
 ## Impact
 getAdjustedLongAndShortTokenAmounts() function is always reverted . So it will not return adjustedLongTokenAmount and adjustedShortTokenAmount
