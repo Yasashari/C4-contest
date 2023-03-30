@@ -1,6 +1,6 @@
 # Function withdraw may be reverted due to hardcoded slipage during market turbulance conditions. 
 
-WstEth.sol has a hardcoded maxSlipage as 1%. It could revert the withdraw function sudden crash of price. 
+WstEth.sol has a hardcoded maxSlipage as 1%. It could revert the withdraw function during sudden price crashing. 
 ## Proof of Concept
 
     35  maxSlippage = (1 * 10 ** 16); // 1%
@@ -20,6 +20,6 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
- Let owner to  determine the maximum slippage he's willing to take with the current market condition as a input parament for the withdraw
- function. 
+ Remove the hardcoded maxSlippage & Let owner to  determine the maximum slippage he's willing to take with the current market condition as a
+ input parameter for the withdraw function. 
  
