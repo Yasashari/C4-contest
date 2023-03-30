@@ -23,6 +23,23 @@ Here check the deposit amount is greater than the getMinimumDeposit and smaller 
 
 ![image](https://user-images.githubusercontent.com/118436384/228857192-47a89972-aabc-4680-995e-f2ddfa7dad40.png)
 
+When the time of writing the POC there is no enough liquidity on rEth/WETH pool. You can see here.
+
+https://etherscan.io/address/0xf0e02cf61b31260fd5ae527d58be16312bda59b1#readContract
+
+![image](https://user-images.githubusercontent.com/118436384/228860650-9634ca46-fc46-425f-a90f-0d53ff8ee52b.png)
+
+
+So its unable to perfom the rebalance with current condition.
+
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+
+
+
+
 
 
 
