@@ -62,6 +62,23 @@ Add the deadline: block.timestamp as shown below.
       100                  });
       101              amountOut = ISwapRouter(UNISWAP_ROUTER).exactInputSingle(params);
       
+https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#[L91,L101]
+
+Also its needed to change the ISwapRouter interface ExactInputSingleParams struct accrodingly. Add the  deadline: block.timestamp as shown
+below.
+
+       5         struct ExactInputSingleParams {
+       6             address tokenIn;
+       7             address tokenOut;
+       8             uint24 fee;
+       9             address recipient;
+       +                        deadline: block.timestamp,
+      10              uint amountIn;
+      11              uint amountOutMinimum;
+      12              uint160 sqrtPriceLimitX96;
+      13          }
+
+
 
     
 
