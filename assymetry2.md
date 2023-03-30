@@ -20,6 +20,6 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
- Remove the hardcoded maxSlippage & Let owner to  determine the maximum slippage he's willing to take with the current market condition as a
+ Remove the hardcoded maxSlippage & let owner to  determine the maximum slippage he's willing to take with the current market condition as a
  input parameter for the withdraw function. 
  
