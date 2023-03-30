@@ -12,13 +12,17 @@ that transaction (right now) then reverting . So rebalance cannot not perfomed d
 
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/SafEth.sol#L152
 
-This check poolCanDeposit return value meaning if 
+
 
 ![image](https://user-images.githubusercontent.com/118436384/228854461-a19ae48d-7ba6-40af-8510-cf360371fd9f.png)
 
 
+Here check the deposit amount is greater than the getMinimumDeposit and smaller than then getMaximumDepositPoolSize. If deposit amount is >
+5000 Eth then it swap will be done via Uniswap pool.
 
-![image](https://user-images.githubusercontent.com/118436384/228856402-dc5d1d58-0937-45b6-ad28-7cabcc5fb4e4.png)
+
+![image](https://user-images.githubusercontent.com/118436384/228857192-47a89972-aabc-4680-995e-f2ddfa7dad40.png)
+
 
 
 
