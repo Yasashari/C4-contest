@@ -37,13 +37,16 @@ https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/deriv
       100                  });
       101              amountOut = ISwapRouter(UNISWAP_ROUTER).exactInputSingle(params);
 
+https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#[L91,L101]
+
 Here you can see that deadline parameter has not been defined so that it could finnaly revert the swap.
 
 ## Tools Used
+
 Manual Auditing
 
 ### Recommended Mitigation Steps
 
-Define the 
+Define the deadline : 
 
 
