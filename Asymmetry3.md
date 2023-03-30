@@ -1,8 +1,8 @@
 # Not enough liquidity on rETH/WETH pair so rebalance may be reverted 
 
-when rebalancing the protocol it withdraw all the derivatives from respective contracts & deposit Eth acccording to the newly assigened weights.
-If deposit Eth amout is more than 5000 for the Reth.sol contract it will swap Eth using Uniswap rEth/WETH pool , since there is no liquidity for
-that transaction (right now) then reverting . So rebalance cannot not perfomed due to lack of liquidty on uniswap rETH/WETH pair.
+Rebalancing the protocol it withdraw all the derivatives from respective contracts & deposit Eth acccording to the newly assigened weights.
+If deposit Eth amout is more than 5000 for the Reth.sol contract it will swap Eth using Uniswap rEth/WETH pool , since there is no liquidity
+for that transaction (right now) then reverting . So rebalance cannot not perfomed due to lack of liquidty on uniswap rETH/WETH pair.
 
 ## Proof of Concept
 
@@ -36,6 +36,7 @@ So its unable to perfom the rebalance with current condition.
 Manual Auditing
 
 ## Recommended Mitigation Steps
+
 
 
 
