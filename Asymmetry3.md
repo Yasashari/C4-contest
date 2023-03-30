@@ -17,7 +17,7 @@ https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/SafEt
 ![image](https://user-images.githubusercontent.com/118436384/228854461-a19ae48d-7ba6-40af-8510-cf360371fd9f.png)
 
 
-https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#L148
+https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#L170
 
 
 Here check the deposit amount is greater than the getMinimumDeposit and smaller than then getMaximumDepositPoolSize. If deposit amount is >
@@ -26,6 +26,7 @@ Here check the deposit amount is greater than the getMinimumDeposit and smaller 
 
 ![image](https://user-images.githubusercontent.com/118436384/228857192-47a89972-aabc-4680-995e-f2ddfa7dad40.png)
 
+https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#L148
 
 At the time of writing the POC there is not enough liquidity on rEth/WETH pool. You can see it here.
 
