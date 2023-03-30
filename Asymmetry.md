@@ -23,3 +23,27 @@ Source : https://docs.uniswap.org/contracts/v3/guides/swaps/single-swaps
 
 
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#[L177,L183]
+
+
+      91      ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
+      92                  .ExactInputSingleParams({
+      93                      tokenIn: _tokenIn,
+      94                      tokenOut: _tokenOut,
+      95                      fee: _poolFee,
+      96                      recipient: address(this),
+      97                      amountIn: _amountIn,
+      98                      amountOutMinimum: _minOut,
+      99                      sqrtPriceLimitX96: 0
+      100                  });
+      101              amountOut = ISwapRouter(UNISWAP_ROUTER).exactInputSingle(params);
+
+Here you can see that deadline parameter has not been defined so that it could finnaly revert the swap.
+
+## Tools Used
+Manual Auditing
+
+### Recommended Mitigation Steps
+
+Define the 
+
+
