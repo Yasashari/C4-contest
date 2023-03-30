@@ -12,8 +12,8 @@ https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/deriv
 
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/WstEth.sol#L60
 
-Due to hardcoded maxSlippage owner unable to define minOut so that its a constant (relative to the stEthBal) , Eventually Owner unable to
-perform the withdraw function during price crash conditions. 
+Due to hardcoded maxSlippage owner unable to define minOut so that its a constant (relative to the input parameter amount) , eventually Owner
+unable to perform the withdraw function during price crash conditions. 
 
 ## Tools Used
 Manual Auditing
