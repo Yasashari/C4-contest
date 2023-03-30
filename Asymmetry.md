@@ -1,5 +1,13 @@
 # Not defining deadline in ExactInputSingleParams 
 
+To execute the swap function, its needed to define necessary swap data for ExactInputSingleParams struct. 
+
+![image](https://user-images.githubusercontent.com/118436384/228734373-c5b7348b-0fbe-4f93-8fec-c0389a053338.png)
+
+
+Source : https://docs.uniswap.org/contracts/v3/reference/periphery/interfaces/ISwapRouter
+Source : https://docs.uniswap.org/contracts/v3/guides/swaps/single-swaps
+
 
 ## Proof of Concept
 
