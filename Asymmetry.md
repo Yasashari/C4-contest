@@ -39,7 +39,7 @@ https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/deriv
 
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#[L91,L101]
 
-Here you can see that deadline parameter has not been defined so that it could finnaly revert the swap.
+Here you can see that deadline parameter has not been defined so that it could finally revert the swap.
 
 ## Tools Used
 
@@ -64,7 +64,7 @@ Add the deadline: block.timestamp as shown below.
       
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/Reth.sol#[L91,L101]
 
-Also its needed to change the ISwapRouter interface ExactInputSingleParams struct accrodingly. Add the  deadline: block.timestamp as shown
+Also its needed to change the ISwapRouter interface ExactInputSingleParams struct accordingly. Add the  deadline: block.timestamp as shown
 below.
 
        5         struct ExactInputSingleParams {
