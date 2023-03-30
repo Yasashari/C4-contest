@@ -47,6 +47,23 @@ Manual Auditing
 
 ### Recommended Mitigation Steps
 
-Define the deadline : 
+Add the deadline: block.timestamp as shown below.
+
+      91      ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
+      92                  .ExactInputSingleParams({
+      93                      tokenIn: _tokenIn,
+      94                      tokenOut: _tokenOut,
+      95                      fee: _poolFee,
+      96                      recipient: address(this),
+      +                        deadline: block.timestamp,
+      97                      amountIn: _amountIn,
+      98                      amountOutMinimum: _minOut,
+      99                      sqrtPriceLimitX96: 0
+      100                  });
+      101              amountOut = ISwapRouter(UNISWAP_ROUTER).exactInputSingle(params);
+      
+
+    
+
 
 
