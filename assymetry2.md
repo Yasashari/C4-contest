@@ -1,6 +1,7 @@
-# Function withdraw may be reverted due to hardcoded slipage during market turbulance conditions. 
+# Function withdraw may be reverted due to hardcoded slippage during market turbulence conditions.
 
-WstEth.sol has a hardcoded maxSlipage as 1%. It could revert the withdraw function during sudden price crashing. 
+WstEth.sol has a hardcoded maxSlipage as 1%. It could revert the withdraw function during sudden price crashes.
+
 ## Proof of Concept
 
     35  maxSlippage = (1 * 10 ** 16); // 1%
@@ -12,7 +13,7 @@ https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/deriv
 
 https://github.com/code-423n4/2023-03-asymmetry/blob/main/contracts/SafEth/derivatives/WstEth.sol#L60
 
-Due to hardcoded maxSlippage owner unable to define minOut so that its a constant (relative to the input parameter amount) , eventually Owner
+Due to hard coded maxSlippage owner unable to define minOut so that its a constant (relative to the input parameter amount) , eventually Owner
 unable to perform the withdraw function during price crash conditions. 
 
 ## Tools Used
@@ -20,6 +21,6 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
- Remove the hardcoded maxSlippage & let owner to  determine the maximum slippage he's willing to take with the current market condition as a
+ Remove the hard coded maxSlippage & let owner to  determine the maximum slippage he's willing to take with the current market condition as a
  input parameter for the withdraw function. 
  
