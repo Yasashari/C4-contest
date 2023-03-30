@@ -72,7 +72,7 @@ below.
        7             address tokenOut;
        8             uint24 fee;
        9             address recipient;
-       +                        deadline: block.timestamp,
+       +              deadline: block.timestamp,
       10              uint amountIn;
       11              uint amountOutMinimum;
       12              uint160 sqrtPriceLimitX96;
