@@ -43,6 +43,10 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
+Need to re-allocate the weights to make it less than 5000 ETH (deposit amount) in total or deposit number of smaller transactions. (Not
+depositing whole amount in a single transaction)  
+
+
 
 
 
