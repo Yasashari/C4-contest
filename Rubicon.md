@@ -1,7 +1,11 @@
 # Miscalculation of pay_amt so that _matcho function doesn't work as expected 
 
 When orders get filled either one of these t_pay_amt or t_buy_amt goes to zero (Limiting factor should go to zero first). But
-with current implementation t_pay_amt is 0 if only t_buy_amt = 0.  
+with current implementation t_pay_amt is 0 if only t_buy_amt = 0.  So function offer not doesn't work properly.
+
+https://github.com/code-423n4/2023-04-rubicon/blob/main/contracts/RubiconMarket.sol#L840
+
+
 
 ## Proof of Concept
 
