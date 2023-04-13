@@ -50,6 +50,8 @@ Manual Auditing
 
 Use this equation to calculate t_pay_amt
 
+t_pay_amt  = How much tokes left to fill next orders - spend amount of current filling order
+
 1317     t_pay_amt = t_pay_amt - min(m_pay_amt, t_buy_amt) x m_buy_amt / m_pay_amt
 
 
