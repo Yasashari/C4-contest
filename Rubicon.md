@@ -20,6 +20,7 @@ https://github.com/code-423n4/2023-04-rubicon/blob/main/contracts/RubiconMarket.
 Consider this senario ,
 
 t_buy_amt = 2ETH (Thats mean he need to buy 2 Eth) 
+
 t_pay_amt = 2000 USDC (That mean he wish to pay 2000 USDC)
 
 Current best offer 1ETH = 1600 USDC
@@ -39,7 +40,7 @@ Current best offer 1ETH = 1600 USDC
 But correct ans shoud be 
 
 	          t_pay_amt  =  2000 - 1600 = 400 USDC     
-		                   =  2000 - 1ETH x 1600 / 1 ETH  = 400 USDC
+		             =  2000 - 1ETH x 1600 / 1 ETH  = 400 USDC
                        
 
 ## Tools Used
@@ -51,7 +52,6 @@ Use this equation to calculate t_pay_amt
 
 1317     t_pay_amt = t_pay_amt - min(m_pay_amt, t_buy_amt) x m_buy_amt / m_pay_amt
 
-t_pay_amt-old
 
                        
 
