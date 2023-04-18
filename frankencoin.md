@@ -1,7 +1,7 @@
 # Not burning tokens from the all the address in a array due to hardcoded value
 
-Its hardcoded to 0th element in the addressesToWipe array in the restructureCapTable function. So it skip burning the tokens from
-rest of the address in the array. So function does not work as expected. 
+It's hard coded to the 0th element in the addressesToWipe array in the restructureCapTable function. So it skips burning the tokens
+from the rest of the address in the array. So the function does not work as expected.
 
 ## Proof of Concept
 
@@ -25,6 +25,6 @@ Manual Auditing
 
 313                    address current = addressesToWipe[i];
 
-Use i instead of 0 so that its burned tokens from address which are in the addressesToWipe array. 
+Use i instead of 0 so that its burned tokens from addresses which are in the addressesToWipe array. 
 
 
