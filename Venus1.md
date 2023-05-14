@@ -28,6 +28,18 @@ https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperIntere
 
 https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#L74
 
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+User correct value for blocksPerYear relevent to binance smart chain
+So it should be 
+
+blocksPerYear = 10512000 
+
+Correct value is in BaseJumpRateModelV2.sol file 
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/BaseJumpRateModelV2.sol#L23
+
 
 
 
