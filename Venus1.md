@@ -16,7 +16,7 @@ Due to this incorrect value its caused a incorrect values for baseRatePerBlock &
       37   baseRatePerBlock = baseRatePerYear / blocksPerYear;
       38    multiplierPerBlock = multiplierPerYear / blocksPerYear;
       
-https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#L{37,38}
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#{L37,L38}
 
 
 
