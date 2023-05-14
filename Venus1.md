@@ -1,7 +1,7 @@
 # Borrow rate and supply rate are incorrect due to incorrect blocksPerYear value
 
-This protocol is going to be deployed to BNB chain so its needed to calculate blocksPerYear relevent to BNB Smart Chain.
-But here it has taken blocksPerYear relevent to ethereum chain. 
+This protocol is going to be deployed to BNB chain so its needed to calculate blocksPerYear relevant to BNB Smart Chain.
+But here it has taken blocksPerYear relevant to the ethereum chain.
 
 ## Proof of Concept
 
@@ -18,7 +18,7 @@ Due to this incorrect value its caused a incorrect values for baseRatePerBlock &
       
 https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#{L37,L38}
 
-Its also affectd to getBorrowRate & getSupplyRate functions as shown below.
+Its also affected to getBorrowRate & getSupplyRate functions as shown below.
 
       56    return ((ur * multiplierPerBlock) / BASE) + baseRatePerBlock;
 
@@ -32,7 +32,7 @@ https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperIntere
 Manual Auditing
 
 ## Recommended Mitigation Steps
-User correct value for blocksPerYear relevent to binance smart chain
+User correct value for blocksPerYear relevant to binance smart chain.
 So it should be 
 
 blocksPerYear = 10512000 
