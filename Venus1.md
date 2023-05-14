@@ -18,5 +18,20 @@ Due to this incorrect value its caused a incorrect values for baseRatePerBlock &
       
 https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#{L37,L38}
 
+Its also affectd to getBorrowRate & getSupplyRate functions as shown below.
+
+      56    return ((ur * multiplierPerBlock) / BASE) + baseRatePerBlock;
+
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#L56
+
+      74    uint256 borrowRate = getBorrowRate(cash, borrows, reserves);
+
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/WhitePaperInterestRateModel.sol#L74
+
+
+
+
+
+
 
 
