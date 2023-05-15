@@ -37,10 +37,15 @@ https://github.com/code-423n4/2023-05-venus/blob/main/contracts/Shortfall/Shortf
 
 
 Here auction.seizedRiskFund = riskFundBalance - remainingRiskFundBalance;
+
                             = riskFundBalance - ( remainingRiskFundBalance - maxSeizeableRiskFundBalance) 
+                            
                             = remainingRiskFundBalance - remainingRiskFundBalance + maxSeizeableRiskFundBalance
+                            
                             = maxSeizeableRiskFundBalance 
+                            
                             = incentivizedRiskFundBalance
+                            
                             = poolBadDebt + ((poolBadDebt * incentiveBps) / MAX_BPS)
 
 This final value is in USD . This is the amount that going to be send after auction finished.
