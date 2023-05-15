@@ -1,8 +1,8 @@
-# maxLoopsLimit can not be decreased onece it has been set.
+# maxLoopsLimit can not be decreased once it has been set.
 Lets think if maxLoopsLimit is set to 200 . Later found that above 190 iterations are going to be DOS due to future update of
-binance smart chain or protocol update. Then there should be a way to reduced maxLoopsLimit to 190. Otherwise eventhough
-_ensureMaxLoops(uint256 len) function not revert on lets say 195 iterations , but its actually going to be DOS.  
-So there should be a way to decreased it . Currently Only increasing is possble. 
+binance smart chain or protocol update. Then there should be a way to reduced maxLoopsLimit to 190. Otherwise even though
+_ensureMaxLoops(uint256 len) function does not revert on lets say 195 iterations , but its actually going to be DOS.  
+So there should be a way to decrease it . Currently Only increasing is possible. 
 
 ## Proof of Concept
 
@@ -24,7 +24,7 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-Use this require statement instead of current one. 
+Use this require statement instead of the current one.
 
     26  require(limit > 0 , "Comptroller: Invalid maxLoopsLimit");
     
