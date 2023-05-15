@@ -1,6 +1,8 @@
 # maxLoopsLimit can not be decreased onece it has been set.
-Lets think if maxLoopsLimit is set to 200 , later found that above 190 iterations are going to be DOS then there should be a way to
-reduced maxLoopsLimit to 190. But there is no way to decreased it . Only increasing can be possble. 
+Lets think if maxLoopsLimit is set to 200 . Later found that above 190 iterations are going to be DOS due to future update of
+binance smart chain or protocol update. Then there should be a way to reduced maxLoopsLimit to 190. Otherwise eventhough
+_ensureMaxLoops(uint256 len) function not revert on lets say 195 iterations , but its actually going to be DOS.  
+So there should be a way to decreased it . Currently Only increasing is possble. 
 
 ## Proof of Concept
 
