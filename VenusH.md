@@ -38,7 +38,8 @@ Manual Auditing
 ## Recommended Mitigation Steps
 
 It should be divided by the corrosponding decimals for each underlying tokens.
-      392       
+
+      392      priceOracle.updatePrice(address(vTokens[i]));
       ++       IERC20Upgradeable erc20 = IERC20Upgradeable(address(vTokens[i].underlying()));
       393      uint256 usdValue = (priceOracle.getUnderlyingPrice(address(vTokens[i])) * marketBadDebt) / erc20.decimals() ;
 
