@@ -17,6 +17,8 @@ multiply by the corrosponding price finnaly its divided by the corrospoinding de
     397        auction.marketDebt[vTokens[i]] = marketBadDebt;
     398        marketsDebt[i] = marketBadDebt;
     399    }
+
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/Shortfall/Shortfall.sol#L393
     
 If we consider the WBTC here 
 
@@ -29,6 +31,8 @@ So usdValue =  30000 x 2 x 10^ 8 / 1e18
 This value round off to zero.
 
 But the correct value should be = 30000 x 2 x 10^ 8 / 10^ 8 = 60000 USD
+
+
 
 
 
