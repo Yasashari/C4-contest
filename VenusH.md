@@ -32,6 +32,19 @@ This value round off to zero.
 
 But the correct value should be = 30000 x 2 x 10^ 8 / 10^ 8 = 60000 USD
 
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+
+It should be divided by the corrosponding decimals for each underlying tokens.
+      392       
+      ++       IERC20Upgradeable erc20 = IERC20Upgradeable(address(vTokens[i].underlying()));
+      393      uint256 usdValue = (priceOracle.getUnderlyingPrice(address(vTokens[i])) * marketBadDebt) / erc20.decimals() ;
+
+
+
+
 
 
 
