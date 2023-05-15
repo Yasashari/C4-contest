@@ -1,7 +1,7 @@
-# Hardcoded deciamal places caused incorrect usdValue for poolBadDebt
+# Hardcoded decimal places caused incorrect usdValue for poolBadDebt
 
 When calculating the poolBadDebt in terms of USD value , first take the marketBadDebt in terms of underlying token then it is
-multiply by the corrosponding price finnaly its divided by the corrospoinding decimal places. But here it has been divided by the 
+multiplied by the corresponding price finally its divided by the corresponding decimal places. But here it has been divided by the 
 1e18. 
 
 ## Proof of Concept
@@ -32,15 +32,17 @@ This value round off to zero.
 
 But the correct value should be = 30000 x 2 x 10^ 8 / 10^ 8 = 60000 USD
 
-Due to this miscalcuation poolBadDebt is less comparing with actual poobBadDebts it should be. So its unable to start auction even though there is
-enough poolBadDebts exists to start the acution. (Since its showing less poolBaddebts).
+Due to this miscalculation poolBadDebt is less compared with actual poobBadDebts it should be. So its unable to start auction even though there is
+enough poolBadDebts exists to start the auction. (Since its showing less poolBaddebts).
+
+https://github.com/code-423n4/2023-05-venus/blob/main/contracts/Shortfall/Shortfall.sol#L401
 
 ## Tools Used
 Manual Auditing
 
 ## Recommended Mitigation Steps
 
-It should be divided by the corrosponding decimals for each underlying tokens.
+It should be divided by the corresponding decimals for each underlying tokens.
 
       392      priceOracle.updatePrice(address(vTokens[i]));
       ++       IERC20Upgradeable erc20 = IERC20Upgradeable(address(vTokens[i].underlying()));
