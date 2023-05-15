@@ -79,7 +79,7 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-keep the incentivizedRiskFundBalance in terms of token value not USD value. 
+keep the incentivizedRiskFundBalance in terms of token value not USD value.
 
 
                                  
