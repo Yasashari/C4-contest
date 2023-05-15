@@ -32,6 +32,9 @@ This value round off to zero.
 
 But the correct value should be = 30000 x 2 x 10^ 8 / 10^ 8 = 60000 USD
 
+Due to this miscalcuation poolBadDebt is less comparing with actual poobBadDebts it should be. So its unable to start auction even though there is
+enough poolBadDebts exists to start the acution. (Since its showing less poolBaddebts).
+
 ## Tools Used
 Manual Auditing
 
