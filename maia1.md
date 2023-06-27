@@ -1,6 +1,6 @@
 ## Incorrect use of address(this)
 When deploying a new instance of UniswapV3Staker contract it should be passed the address of the uniswapV3GaugeFactory as a constructor argument.
-So it should be used address(this). But here its using this .
+So it should be used address(this). But here it's using this .
 
 ### Proof of Concept
 
