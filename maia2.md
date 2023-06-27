@@ -1,6 +1,6 @@
-## Underflow due to incorrect comparision
+## Underflow due to incorrect comparison
 
-leftOverBandwidth is underflowed due to incorrect comparision of oldTotalWeights and newTotalWeights. 
+leftOverBandwidth is underflowed due to incorrect comparison of oldTotalWeights and newTotalWeights. 
 
 ### Proof of Concept
 
@@ -30,7 +30,7 @@ Here initially consider this check oldTotalWeights > newTotalWeights, and calcul
         bandwidthStateList[i].bandwidth =
                                     oldBandwidth.mulDivUp(oldTotalWeights, newTotalWeights).toUint248();
                                     
-Due to above condtion , 
+Due to above condition , 
 
        oldBandwidth.mulDivUp(oldTotalWeights, newTotalWeights).toUint248()  > oldBandwidth
        
@@ -42,7 +42,7 @@ So eventually ,
 
       leftOverBandwidth += oldBandwidth - bandwidthStateList[i].bandwidth < 0 
 
-  Inital value is leftOverBandwidth is zero. So leftOverBandwidth is going to be negative then its reverted.
+ Initial value is leftOverBandwidth is zero. So leftOverBandwidth is going to be negative then its reverted.
 
 
 ### Tools Used
