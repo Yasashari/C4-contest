@@ -1,8 +1,12 @@
-## Delegatecall dost check the contract existence . Since delegatecall returns true even if the contract not existed.
+## Delegatecall dost check the contract existence . Since delegatecall returns true even if the contracts which are not not existing. 
 
-Low-level calls call/delegatecall/staticcall return true even if the account called is non-existent (per EVM design). Solidity documentation warns: "The low-level functions call, delegatecall and staticcall return true as their first return value if the account called is non-existent, as part of the design of the EVM. Account existence must be checked prior to calling if needed.”
+Low-level calls call/delegatecall/staticcall return true even if the account called is non-existent (per EVM design). Solidity
+documentation warns: "The low-level functions call, delegatecall and staticcall return true as their first return value if the
+account called is non-existent, as part of the design of the EVM. Account existence must be checked prior to calling if needed.”
 
-Here delegatecall will return true even if the implementation contract doesn't exist at any incorrect-but-not-zero address, e.g. EOA address, used during initialization by accident. Then delegatecall will return true & trasancion done successfully. But still there is a issue. 
+
+Here delegatecall will return true even if the implementation contract doesn't exist at any incorrect-but-not-zero address.
+Then delegatecall will return true &  transaction  done successfully. But still there could be an issue. 
 
 ## Proof of Concept
 
@@ -45,8 +49,8 @@ https://github.com/code-423n4/2023-05-maia/blob/main/src/governance/GovernorBrav
                 address oldImplementation = implementation;
      48           implementation = implementation_;
 
-delegatecall will return true & trasancion can be completed successfully. But trasanction can be completed successfully with even
-with the non existant of implementation_ address. So it casuse a issue. 
+delegatecall will return true & transaction can be completed successfully. But transaction can be completed successfully with even
+with the non existent of implementation_ address. So it casuse an issue. 
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/governance/GovernorBravoDelegator.sol#L20-L51
 
@@ -57,7 +61,7 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-Check the  callee.code.length > 0 . So add require statement dn isContract function as below. 
+Check the  callee.code.length > 0 . So add require statement and isContract function as below. 
 
      59       function delegateTo(address callee, bytes memory data) internal {
      ++          require(isContract(callee), "Address: call to non-contract");
@@ -68,7 +72,6 @@ Check the  callee.code.length > 0 . So add require statement dn isContract funct
      64       }
 
 
-and add this function
 
      ++     function isContract(address account) internal view returns (bool) {
      ++             // This method relies on extcodesize/address.code.length, which returns 0
