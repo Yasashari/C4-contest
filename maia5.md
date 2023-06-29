@@ -59,6 +59,8 @@ https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/UlyssesERC4626
 
 Also this is also not comply with the EIP-4626 standared. 
 
+previewDeposit
+
         MUST return as close to and no more than the exact amount of Vault shares that would be minted in a deposit call in the
         same transaction. I.e. deposit should return the same or more shares as previewDeposit if called in the same transaction.
 
