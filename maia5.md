@@ -55,6 +55,27 @@ https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/UlyssesERC4626
   return values. Currently previewMint or previewDeposit showing the same amount they will be minted. But actual one is different.
   Since beforeDeposit & beforeMint functions are associate with the fees so deposit & minting amounts are different. 
 
+ Same thing is going with previewRedeem(uint256 shares) and redeem functions. 
+
+Also this is also not comply with the EIP-4626 standared. 
+
+        MUST return as close to and no more than the exact amount of Vault shares that would be minted in a deposit call in the
+        same transaction. I.e. deposit should return the same or more shares as previewDeposit if called in the same transaction.
+
+https://eips.ethereum.org/EIPS/eip-4626. 
+
+
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+
+Use standared ERC4626 contract to implement those functions.
+
+
+
+
+
   
 
   
