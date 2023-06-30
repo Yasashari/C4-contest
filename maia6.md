@@ -1,4 +1,4 @@
-## Not able to trasnfer the tokens if user remove all the guages one by one.
+## Not able to transfer the tokens if user remove all the guages one by one.
 
 User must have enough free boost to trasnfer the tokens. Thats meaning if user wants to transfer all the tokens this mapping needs
 to be set to zero. (getUserBoost[msg.sender] = 0 ) . But it set to zero thorugh only this decrementAllGaugesAllBoost() function. If
