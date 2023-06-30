@@ -1,9 +1,9 @@
 ## Not able to trasnfer the tokens if user remove all the guages one by one.
 
-User must have enough free boost to trasnfer the tokens. Thats meaning if user wants to transfer all the tokens this mapping needs to
-be set to zero. (getUserBoost[msg.sender] = 0 ) . But it set to zero thorugh only this decrementAllGaugesAllBoost() function. If user
-use decrementGaugeBoost function , decrementGaugeAllBoost or decrementGaugesBoostIndexed to remove the all the guages then user
-cannot transfer the tokens since those functions not setting getUserBoost[msg.sender] mapping to zero.
+User must have enough free boost to trasnfer the tokens. Thats meaning if user wants to transfer all the tokens this mapping needs
+to be set to zero. (getUserBoost[msg.sender] = 0 ) . But it set to zero thorugh only this decrementAllGaugesAllBoost() function. If
+user use decrementGaugeBoost function , decrementGaugeAllBoost or decrementGaugesBoostIndexed to remove the all the guages then
+user cannot transfer the tokens since those functions not setting getUserBoost[msg.sender] mapping to zero.
 
 ## Proof of Concept
       
@@ -50,7 +50,7 @@ Lets think guage attach user
                     emit Attach(user, msg.sender, userGaugeBoost);
      135            }
 
-Here you can see user balance set set to the getUserBoost[user] mapping. 
+Here you can see user balance set to the getUserBoost[user] mapping. 
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-20/ERC20Boost.sol#L116C1-L135C6
 
@@ -67,7 +67,26 @@ decrementGaugesBoostIndexed  fucntions)
 
     
     
-Here  getUserBoost[user]  this is not set to zero. Now if user transfer the tokens   
+Here  getUserBoost[user]  is not set to zero. Now if user transfer the tokens user will not be able transfer the tokens. 
+
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+
+All the attach , dettach fucntions as well as decrementgauge and decrementboost functions need to set the getUserBoost[user] 
+mapping appropriatly.  
+
+Eg : 
+                  
+     198              function decrementAllGaugesBoost(uint256 boost) external {
+     199                      decrementGaugesBoostIndexed(boost, 0, _userGauges[msg.sender].length());
+     ++                       getUserBoost[msg.sender] = 0;      
+     200                 }
+     
+https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-20/ERC20Boost.sol#L198C3-L200C6
+
+
 
 
 
