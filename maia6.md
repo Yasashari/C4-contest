@@ -74,17 +74,10 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-All the attach , dettach fucntions as well as decrementgauge and decrementboost functions need to set the getUserBoost[user] 
-mapping appropriatly.  
+You can call the  updateUserBoost(address user) inside of every attach , dettach guage fucntions as well as decrementgauge and
+decrementboost functions unless _userGauges[user].values() not equal to zero. when removing the last guage set 
+getUserBoost[user] = 0 .
 
-Eg : 
-                  
-     198              function decrementAllGaugesBoost(uint256 boost) external {
-     199                      decrementGaugesBoostIndexed(boost, 0, _userGauges[msg.sender].length());
-     ++                       getUserBoost[msg.sender] = 0;      
-     200                 }
-     
-https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-20/ERC20Boost.sol#L198C3-L200C6
 
 
 
