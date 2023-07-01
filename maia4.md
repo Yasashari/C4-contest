@@ -1,5 +1,4 @@
-## Delegatecall does not check the contract existence . Since delegatecall returns true even if the contracts which are not not
-existing. 
+## Delegatecall does not check the contract existence . Since delegatecall returns true even if the contracts which are not not existing. 
 
 Low-level calls call/delegatecall/staticcall return true even if the account called is non-existent (per EVM design). Solidity
 documentation warns: "The low-level functions call, delegatecall and staticcall return true as their first return value if the
