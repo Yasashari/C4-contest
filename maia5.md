@@ -51,6 +51,8 @@ But Deposit and mint functions are used different functions to get the recived a
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/UlyssesERC4626.sol#L34-57
 
+https://github.com/code-423n4/2023-05-maia/blob/main/src/ulysses-amm/UlyssesPool.sol#L942C1-L1019C6
+
   Here its used beforeDeposit & beforeMint functions to get the mint amount. But its different with previewMint and previewDeposit
   return values. Currently previewMint or previewDeposit showing the same amount they will be minted. But actual one is different.
   Since beforeDeposit & beforeMint functions are associate with the fees so deposit & minting amounts are different. 
