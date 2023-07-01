@@ -20,7 +20,7 @@ A malicious early user can deposit() with 1 wei of asset token as the first depo
                         emit Deposit(msg.sender, receiver, assets, shares);
                 
                         afterDeposit(assets, shares);
-   44                 }
+    44                 }
    
 https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/ERC4626.sol#L32C1-L44C6
 
@@ -54,5 +54,60 @@ They will immediately lose 9999e18 or half of their deposits if they redeem() ri
     97          }
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/ERC4626.sol#L80C1-L97C6
+
+## Tools Used
+Manual Auditing
+
+## Recommended Mitigation Steps
+
+Consider requiring a minimal amount of share tokens to be minted for the first minter, and send a port of the initial mints as a
+reserve to the DAO so that the pricePerShare can be more resistant to manipulation.
+
+                function deposit(uint256 assets, address receiver) public virtual returns (uint256 shares) {
+                    beforeDeposit(assets, shares);
+                
+                    // Check for rounding error since we round down in previewDeposit.
+                    require((shares = previewDeposit(assets)) != 0, "ZERO_SHARES");
+                
+                    // for the first mint, we require the mint amount > (10 ** decimals) / 100
+                    // and send (10 ** decimals) / 1_000_000 of the initial supply as a reserve to DAO
+                    if (totalSupply == 0 && decimals >= 6) {
+                        require(shares > 10 ** (decimals - 2));
+                        uint256 reserveShares = 10 ** (decimals - 6);
+                        _mint(DAO, reserveShares);
+                        shares -= reserveShares;
+                    }
+                
+                    // Need to transfer before minting or ERC777s could reenter.
+                    asset.safeTransferFrom(msg.sender, address(this), assets);
+                
+                    _mint(receiver, shares);
+                
+                    emit Deposit(msg.sender, receiver, assets, shares);
+                }
+                
+                function mint(uint256 shares, address receiver) public virtual returns (uint256 assets) {
+                    beforeDeposit(assets, shares);
+                
+                    assets = previewMint(shares); // No need to check for rounding error, previewMint rounds up.
+                
+                    // for the first mint, we require the mint amount > (10 ** decimals) / 100
+                    // and send (10 ** decimals) / 1_000_000 of the initial supply as a reserve to DAO
+                    if (totalSupply == 0 && decimals >= 6) {
+                        require(shares > 10 ** (decimals - 2));
+                        uint256 reserveShares = 10 ** (decimals - 6);
+                        _mint(DAO, reserveShares);
+                        shares -= reserveShares;
+                    }
+                
+                    // Need to transfer before minting or ERC777s could reenter.
+                    asset.safeTransferFrom(msg.sender, address(this), assets);
+                
+                    _mint(receiver, shares);
+                
+                    emit Deposit(msg.sender, receiver, assets, shares);
+                }
+
+
 
 
