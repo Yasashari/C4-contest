@@ -1,4 +1,5 @@
-## Delegatecall dost check the contract existence . Since delegatecall returns true even if the contracts which are not not existing. 
+## Delegatecall does not check the contract existence . Since delegatecall returns true even if the contracts which are not not
+existing. 
 
 Low-level calls call/delegatecall/staticcall return true even if the account called is non-existent (per EVM design). Solidity
 documentation warns: "The low-level functions call, delegatecall and staticcall return true as their first return value if the
@@ -50,7 +51,7 @@ https://github.com/code-423n4/2023-05-maia/blob/main/src/governance/GovernorBrav
      48           implementation = implementation_;
 
 delegatecall will return true & transaction can be completed successfully. But transaction can be completed successfully with even
-with the non existent of implementation_ address. So it casuse an issue. 
+with the non existent of implementation_ address. So it caused an issue. 
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/governance/GovernorBravoDelegator.sol#L20-L51
 
