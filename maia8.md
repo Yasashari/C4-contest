@@ -1,7 +1,7 @@
-## amount0Min and amount1Min are hardcoded to zero. Front running & sandwitch oppertunities. 
+## amount0Min and amount1Min are hardcoded to zero. Front running & sandwich opportunities. 
 
 amount0Min and amount1Min are hardcoded to zero in rerange() function in the PoolActions.sol contract . So that attackers have the
-front running & sandwitch oppertunities. 
+front running & sandwich opportunities. 
 
 ## Proof of Concept
 
@@ -28,8 +28,8 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-Use amount0Min & amount1Min as user input parameters so that (Not hardcording to some value) anyone who using this function can
-set the  those values accordingly at the time of they executing . 
+Use amount0Min & amount1Min as user input parameters so that (Not hard cording to some value) anyone who using this function can
+set those values accordingly at the time of their execution. 
 
 
 
