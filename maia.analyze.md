@@ -6,7 +6,7 @@ sqrtPriceX96 , how  sqrtPriceX96 related to tick and vise versa & uniswapV3 slot
 Also during the audit, we were able to find 1st depositor attack vectors, invalid comparisons, not properly removing the array
 elements (parallel storing), decimal errors when normalizing & denormalizing, Significant round-off errors when depositing like USDC, delegatecall errors & more. 
 
-During the audit, we identified certain issues that were not included in any of the reports.
+ We identified certain issues that were not included in any of the reports in this audit. 
 
 ERC4626MultiToken.sol : Here there is an issue that user being able to deposit underlying assets & if he redeems it he will be
 getting fewer amounts of token compared with what he deposited. This bug is reported & mitigation steps are also there. Another
