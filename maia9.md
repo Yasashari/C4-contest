@@ -1,6 +1,6 @@
 ## User gets less number of tokens compared with what he deposited. 
-User is able to deposit different amounts of underlying tokens if user immediately redeems it he will get always less amount of
-tokens compared with the deposited amount with ERC4626MultiToken.sol contract. 
+User is able to deposit different amounts of underlying tokens and if user immediately redeems it he will get always less or same
+amount of tokens compared with the deposited amount with ERC4626MultiToken.sol contract. 
 
 ## Proof of Concept
 
@@ -68,7 +68,7 @@ So totalWeights = 10310
 
 If the User deposits  [ 20000 , 20000 , 20000 ] amount of underlying assets he will be minted  20620 amount of shares. 
 
-Now user redeem 20620 share token he will get back [ 20000,600,20 ] amounts of underlyin tokens. So you can see clearly user loss
+Now user redeem 20620 share token he will get back [ 20000,600,20 ] amounts of underlying tokens. So you can see clearly user loss
 the funds.
 
 
@@ -78,14 +78,18 @@ Manual Auditing
 ## Recommended Mitigation Steps
 
 If user use minting & redeem functions to deposit & withdraw tokens then there is no error like this. But the issue is with the
-deposit & withdraw functions. So user need to deposit multiples of the weights array as a input of the deposit or withdraw
-function. If not it should be avoided to deposit or witdhraw , if user deposit/ witdhraw different combination of amounts. 
+deposit & withdraw functions. So user needs to deposit multiples of the weights array as an input of the deposit function. If not
+it should be avoided to deposit or withdraw, if user deposits/withdraws different combinations of amounts. 
 
-With this mitigation user able to deposit only if amounts are multiple of weights array. 
+With this mitigation, user is able to deposit only if amounts are multiple of weights array. 
 
-Basically what does the here is calculate the shares using the user input assetAmounts , the use that shares amount to
-recalculate the actual amount that user need to send it order to get that shares. If user send amount match with it then user
-able to deposit it and mint shares. 
+Basically what does here is calculate the shares using the user input assetAmounts , then use that shares amount to
+recalculate the actual amount that the user needs to be sent in order to get that shares. If the user sends amount match with it
+then user is able to deposit it and mint shares. [Basic implementation is here is but it needs to check round down & round up
+since this contract using the round down and up. So this allows user to use deposit or withdraw functions if shares &
+assetAmounts are match with roundup/ down. If there is a discrepeny then user unable to send tokens to deposit function. Anyway
+this implementation is rather good with the current one since current implementation is mostly caused the user funds lose.]
+
 
     93           function deposit(uint256[] calldata assetsAmounts, address receiver)
                        public
