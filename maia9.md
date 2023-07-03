@@ -72,10 +72,10 @@ Now user redeem 20620 share token he will get back [ 20000,600,20 ] amounts of u
 the funds.
 
 
-Tools Used
+## Tools Used
 Manual Auditing
 
-Recommended Mitigation Steps
+## Recommended Mitigation Steps
 
 If user use minting & redeem functions to deposit & withdraw tokens then there is no error like this. But the issue is with the
 deposit & withdraw functions. So user need to deposit multiples of the weights array as a input of the deposit or withdraw
@@ -83,7 +83,7 @@ function. If not it should be avoided to deposit or witdhraw , if user deposit/ 
 
 With this mitigation user able to deposit only if amounts are multiple of weights array. 
 
-               function deposit(uint256[] calldata assetsAmounts, address receiver)
+    93           function deposit(uint256[] calldata assetsAmounts, address receiver)
                        public
                        virtual
                        nonReentrant
@@ -104,9 +104,9 @@ With this mitigation user able to deposit only if amounts are multiple of weight
                        emit Deposit(msg.sender, receiver, assetsAmounts, shares);
                
                        afterDeposit(assetsAmounts, shares);
-                   }
+     110              }
                
-               function withdraw(uint256[] calldata assetsAmounts, address receiver, address owner)
+     156          function withdraw(uint256[] calldata assetsAmounts, address receiver, address owner)
                        public
                        virtual
                        nonReentrant
@@ -129,7 +129,24 @@ With this mitigation user able to deposit only if amounts are multiple of weight
                        emit Withdraw(msg.sender, receiver, owner, assetsAmounts, shares);
                
                        sendAssets(assetsAmounts, receiver);
-                   }
+      185             }
+
+     ++                function checkArray(uint256[] calldata assetsAmounts , uint256 shares ) public view  {
+     ++                        uint256[] memory _assetsAmounts  = convertToAssets( shares) ;  // This is the actual amount user
+     ++                        should be send to get relevant shares.  
+     ++               
+     ++                         uint256 length = assetsAmounts.length;
+                    
+     ++                       for (uint256 i = 0; i < length;) {
+     ++                           require ( assetsAmounts[i] == _assetsAmounts[i] ) ;
+     ++                           unchecked {
+     ++                               i++;
+     ++                           }
+     ++                       }
+                    
+                    
+     ++                   }
+      
 
 
 
