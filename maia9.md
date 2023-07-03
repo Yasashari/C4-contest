@@ -83,6 +83,10 @@ function. If not it should be avoided to deposit or witdhraw , if user deposit/ 
 
 With this mitigation user able to deposit only if amounts are multiple of weights array. 
 
+Basically what does the here is calculate the shares using the user input assetAmounts , the use that shares amount to
+recalculate the actual amount that user need to send it order to get that shares. If user send amount match with it then user
+able to deposit it and mint shares. 
+
     93           function deposit(uint256[] calldata assetsAmounts, address receiver)
                        public
                        virtual
@@ -93,7 +97,7 @@ With this mitigation user able to deposit only if amounts are multiple of weight
                        require((shares = previewDeposit(assetsAmounts)) != 0, "ZERO_SHARES");
                
                   
-                  ++   checkArray( assetsAmounts , shares ) ; // Check the user entered assetsAmounts is a valid amount
+    ++                 checkArray( assetsAmounts , shares ) ; // Check the user entered assetsAmounts is a valid amount
                       
                
                        // Need to transfer before minting or ERC777s could reenter.
@@ -114,7 +118,7 @@ With this mitigation user able to deposit only if amounts are multiple of weight
                    {
                        shares = previewWithdraw(assetsAmounts); // No need to check for rounding error, previewWithdraw rounds up.
                
-               ++   checkArray( assetsAmounts , shares ) ; // Check the user entered assetsAmounts is a valid amount
+      ++            checkArray( assetsAmounts , shares ) ; // Check the user entered assetsAmounts is a valid amount
                
                        if (msg.sender != owner) {
                            uint256 allowed = allowance[owner][msg.sender]; // Saves gas for limited approvals.
