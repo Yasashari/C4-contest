@@ -86,9 +86,8 @@ With this mitigation, user is able to deposit only if amounts are multiple of we
 Basically what does here is calculate the shares using the user input assetAmounts , then use that shares amount to
 recalculate the actual amount that the user needs to be sent in order to get that shares. If the user sends amount match with it
 then user is able to deposit it and mint shares. [Basic implementation is here is but it needs to check round down & round up
-since this contract using the round down and up. So this allows user to use deposit or withdraw functions if shares &
-assetAmounts are match with roundup/ down. If there is a discrepeny then user unable to send tokens to deposit function. Anyway
-this implementation is rather good with the current one since current implementation is mostly caused the user funds lose.]
+since this contract uses the round down and up. Anyway this implementation is rather good with the current one since the current
+implementation is mostly caused user funds lose.]
 
 
     93           function deposit(uint256[] calldata assetsAmounts, address receiver)
