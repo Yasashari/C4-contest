@@ -1,8 +1,9 @@
-## Initial depositor can manipulate the price per share value and future depositors are forced to deposit huge value . 
+## Initial depositor can manipulate the price per share value and future depositors are forced to deposit huge value. 
 
-This is kind of 1st depositor attack. Initial depositor deposit 1 wei of asset token. Then he send large amount of asset token
-directly to the cotract without using the deposit() or  mint() functions. So that asset account balance is increased. Because of that
-minting ratio is drastically increased so future user need to pay large amount of tokens in order to minting valut token.
+This is a kind of 1st depositor attack. Initial depositor deposits 1 wei of asset token. Then he sends a large amount of asset 
+token directly to the cotract without using the deposit() or  mint() functions. So that asset account balance is increased.
+Because of that minting ratio is drastically increased so future users need to pay large amounts of tokens in order to mint valut
+tokens.
 
 ## Proof of Concept
 
@@ -54,6 +55,11 @@ They will immediately lose 9999e18 or half of their deposits if they redeem() ri
     97          }
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/ERC4626.sol#L80C1-L97C6
+
+The same issues occurred with ERC4626DepositOnly.sol contracts as well. 
+
+https://github.com/code-423n4/2023-05-maia/blob/main/src/erc-4626/ERC4626DepositOnly.sol
+(Since the initial depositor can change the minting ratio)
 
 ## Tools Used
 Manual Auditing
