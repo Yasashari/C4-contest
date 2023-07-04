@@ -1,12 +1,12 @@
-## vMaia is an ERC-4626 compliant MAIA token But maxWithdraw & maxRedeem functions are not fully up to EIP-4626's specification
+## vMaia is an ERC-4626 compliant but maxWithdraw & maxRedeem functions are not fully up to EIP-4626's specification
 
-maxWithdraw & maxRedeem functions should return the the 0 during withdrawal is paused. But here it's returning balanceOf[user].
+maxWithdraw & maxRedeem functions should return the 0 during withdrawal is paused. But here it's returning balanceOf[user].
 
 ## Proof of Concept
 
 vMaia Withdrawal is only allowed once per month during the 1st Tuesday (UTC+0) of the month.
 
-This is checked by the below function.
+It's  checked by the below function.
 
      102       function beforeWithdraw(uint256, uint256) internal override {
                 /// @dev Check if unstake period has not ended yet, continue if it is the case.
@@ -58,7 +58,7 @@ Manual Auditing
 
 ## Recommended Mitigation Steps
 
-User if else block & if the time period is within the 1st Tuesday (UTC+0) of the month return balanceOf[user] & else return 0.
+Use if-else block & if the time period is within the 1st Tuesday (UTC+0) of the month return balanceOf[user] & else return 0.
 
 For more information: https://blog.openzeppelin.com/pods-finance-ethereum-volatility-vault-audit-2#non-standard-erc-4626-vault-functionality
 
