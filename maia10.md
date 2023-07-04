@@ -31,9 +31,11 @@ https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf
 
 User need to enter the amount as more than 1Million USDC in to depositToPort function. 
 But the actual amount sent is only 10^-6 of USDC.
-He will be minted 1wei of local token. Here root cause of this issue is, its needed to use  the _normalizeDecimals function
-between the asset amount & minting token amount. But here initially amount is normalized then transfer the undelying token &
-minting the same amount of local token. That cause a error. 
+
+He will be minted 1wei of local token. Here root cause of this issue is, not using the correct equation for normalize &
+denormalize functions as well as needed to use  the _normalizeDecimals function between the asset amount & minting token amount.
+But here initially amount is normalized then transfer the undelying token & minting the same amount of local token. Borth reasons
+caused an error.
 
 ## Tools Used
 Manual Auditing
@@ -46,7 +48,8 @@ Mitigation 1:
 
 Remove the normalize & denormalize between the assets to minting amount. Then consider the apply same decimals to local token.
 
-Mitigation 2: 
+Mitigation 2:
+
 
 
 
