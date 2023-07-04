@@ -15,6 +15,22 @@ the values as a minimum of 1Million USDC, but the actual sending amount is 1 wei
 https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/ArbitrumBranchBridgeAgent.sol#L102C5-L106C6
 
 
+     45            function depositToPort(address _depositor, address _recipient, address _underlyingAddress, uint256 _deposit)
+                    external
+                    requiresBridgeAgent
+                {
+                    address globalToken = IRootPort(rootPortAddress).getLocalTokenFromUnder(_underlyingAddress, localChainId);
+                    if (globalToken == address(0)) revert UnknownUnderlyingToken();
+            
+                    _underlyingAddress.safeTransferFrom(_depositor, address(this), _deposit);
+            
+                    IRootPort(rootPortAddress).mintToLocalBranch(_recipient, globalToken, _deposit);
+    55            }      
+
+https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/ArbitrumBranchPort.sol#L45C1-L55C6
+
+
+
      
 
 
