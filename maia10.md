@@ -50,6 +50,52 @@ Remove the normalize & denormalize between the assets to minting amount. Then co
 
 Mitigation 2:
 
+Correct normalize/ denormalize functions as well as depositToPort & withdrawFromPort functions given below. 
+
+      function _normalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
+             return _decimals == 18 ? _amount : _amount * 1 ether / (10 ** _decimals);
+          }
+      
+      
+      
+          function _denormalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
+              return _decimals == 18 ? _amount : _amount * (10 ** _decimals) / 1 ether;
+          }
+      
+      
+      function depositToPort(address _depositor, address _recipient, address _underlyingAddress, uint256 amount)
+              external
+              requiresBridgeAgent
+          {
+              address globalToken = IRootPort(rootPortAddress).getLocalTokenFromUnder(_underlyingAddress, localChainId);
+              if (globalToken == address(0)) revert UnknownUnderlyingToken();
+      
+              _underlyingAddress.safeTransferFrom(_depositor, address(this), amount);
+      
+              IRootPort(rootPortAddress).mintToLocalBranch(_recipient, globalToken, _normalizeDecimals(uint256 amount, ERC20(underlyingAddress).decimals()) );
+          }
+      
+      function withdrawFromPort(address _depositor, address _recipient, address _globalAddress, uint256 _deposit)
+              external
+              requiresBridgeAgent
+          {
+              if (!IRootPort(rootPortAddress).isGlobalToken(_globalAddress, localChainId)) {
+                  revert UnknownToken();
+              }
+      
+              address underlyingAddress = IRootPort(rootPortAddress).getUnderlyingTokenFromLocal(_globalAddress, localChainId);
+      
+              if (underlyingAddress == address(0)) revert UnknownUnderlyingToken();
+      
+              IRootPort(rootPortAddress).burnFromLocalBranch(_depositor, _globalAddress, _deposit);
+      
+              underlyingAddress.safeTransfer(_recipient, _denormalizeDecimals(_deposit, ERC20(underlyingAddress).decimals()));
+          }
+
+
+
+
+
 
 
 
