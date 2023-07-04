@@ -1,1 +1,66 @@
+## vMaia is an ERC-4626 compliant MAIA token But maxWithdraw & maxRedeem functions are not fully up to EIP-4626's specification
+
+maxWithdraw & maxRedeem functions should return the the 0 during withdrawal is paused. But here it's returning balanceOf[user].
+
+## Proof of Concept
+
+vMaia Withdrawal is only allowed once per month during the 1st Tuesday (UTC+0) of the month.
+
+This is checked by the below function.
+
+     102       function beforeWithdraw(uint256, uint256) internal override {
+                /// @dev Check if unstake period has not ended yet, continue if it is the case.
+                if (unstakePeriodEnd >= block.timestamp) return;
+        
+                uint256 _currentMonth = DateTimeLib.getMonth(block.timestamp);
+                if (_currentMonth == currentMonth) revert UnstakePeriodNotLive();
+        
+                (bool isTuesday, uint256 _unstakePeriodStart) = DateTimeLib.isTuesday(block.timestamp);
+                if (!isTuesday) revert UnstakePeriodNotLive();
+        
+                currentMonth = _currentMonth;
+                unstakePeriodEnd = _unstakePeriodStart + 1 days;
+    114        }
+
+https://github.com/code-423n4/2023-05-maia/blob/main/src/maia/vMaia.sol#L102C1-L114C6
+
+
+    173            function maxWithdraw(address user) public view virtual override returns (uint256) {
+                      return balanceOf[user];
+                  }
+              
+                  /// @notice Returns the maximum amount of assets that can be redeemed by a user.
+                  /// @dev Assumes that the user has already forfeited all utility tokens.
+                  function maxRedeem(address user) public view virtual override returns (uint256) {
+                      return balanceOf[user];
+    181              }
+
+
+https://github.com/code-423n4/2023-05-maia/blob/main/src/maia/tokens/ERC4626PartnerManager.sol#L173C3-L181C6
+
+Other than that period (during the 1st Tuesday (UTC+0) of the month ) , maxWithdraw & maxRedeem functions should return the the 0
+According to EIP-4626 specifications.
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+Tools Used
+Manual Auditing
+
+Recommended Mitigation Steps
+
+
+
+
 
