@@ -1,4 +1,4 @@
-## depositToPort function having substantial roundoff in ArbitrumBranchBridgeAgent.sol 
+##  Significant roundoff error in depositToPort function (ArbitrumBranchBridgeAgent.sol )
 This issue is caused with different decimals than 18. As an Eg USDC, WBTC. Let's consider the USDC as the case scenario. If User
 deposit USDC into the depositToPort function, He needs to enter the amount as at least 1Million USDC (underlying) in order to mint
 1 wei of localtoken.  But here actually user sends the 1 wei of USDC (10^-6). So user is confused what's going with there since he
