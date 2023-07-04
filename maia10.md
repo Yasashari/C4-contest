@@ -52,18 +52,31 @@ Mitigation 2:
 
 Correct normalize/ denormalize functions as well as depositToPort & withdrawFromPort functions given below. 
 
-      function _normalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
-             return _decimals == 18 ? _amount : _amount * 1 ether / (10 ** _decimals);
-          }
+           102         function depositToPort(address underlyingAddress, uint256 amount) external payable lock {
+                          IArbPort(localPortAddress).depositToPort(
+           ++             msg.sender, msg.sender, underlyingAddress, amount) // @ audit correction. 
+                        );
+           106           }
+
+https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/ArbitrumBranchBridgeAgent.sol#L102C5-L106C6
+
+
+
+      1340      function _normalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
+                   return _decimals == 18 ? _amount : _amount * 1 ether / (10 ** _decimals); // @audit correction.
+      1342          }
       
+https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/BranchBridgeAgent.sol#L1340C2-L1342C6      
       
+     388           function _denormalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
+                    return _decimals == 18 ? _amount : _amount * (10 ** _decimals) / 1 ether; // @audit correction
+     390           }
+
+https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/BranchPort.sol#L388C1-L391C1          
       
-          function _denormalizeDecimals(uint256 _amount, uint8 _decimals) internal pure returns (uint256) {
-              return _decimals == 18 ? _amount : _amount * (10 ** _decimals) / 1 ether;
-          }
+
       
-      
-      function depositToPort(address _depositor, address _recipient, address _underlyingAddress, uint256 amount)
+    45        function depositToPort(address _depositor, address _recipient, address _underlyingAddress, uint256 amount)
               external
               requiresBridgeAgent
           {
@@ -72,7 +85,7 @@ Correct normalize/ denormalize functions as well as depositToPort & withdrawFrom
       
               _underlyingAddress.safeTransferFrom(_depositor, address(this), amount);
       
-              IRootPort(rootPortAddress).mintToLocalBranch(_recipient, globalToken, _normalizeDecimals(uint256 amount, ERC20(underlyingAddress).decimals()) );
+              IRootPort(rootPortAddress).mintToLocalBranch(_recipient, globalToken, _normalizeDecimals(uint256 amount, ERC20(underlyingAddress).decimals()) ); //@audit correction
           }
       
       function withdrawFromPort(address _depositor, address _recipient, address _globalAddress, uint256 _deposit)
@@ -90,8 +103,10 @@ Correct normalize/ denormalize functions as well as depositToPort & withdrawFrom
               IRootPort(rootPortAddress).burnFromLocalBranch(_depositor, _globalAddress, _deposit);
       
               underlyingAddress.safeTransfer(_recipient, _denormalizeDecimals(_deposit, ERC20(underlyingAddress).decimals()));
-          }
+             
+      73          }
 
+https://github.com/code-423n4/2023-05-maia/blob/54a45beb1428d85999da3f721f923cbf36ee3d35/src/ulysses-omnichain/ArbitrumBranchPort.sol#L45C1-L73C6
 
 
 
