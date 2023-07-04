@@ -38,27 +38,30 @@ https://github.com/code-423n4/2023-05-maia/blob/main/src/maia/vMaia.sol#L102C1-L
 
 https://github.com/code-423n4/2023-05-maia/blob/main/src/maia/tokens/ERC4626PartnerManager.sol#L173C3-L181C6
 
-Other than that period (during the 1st Tuesday (UTC+0) of the month ) , maxWithdraw & maxRedeem functions should return the the 0
+Other than that period (during the 1st Tuesday (UTC+0) of the month ), maxWithdraw & maxRedeem functions should return the 0
 According to EIP-4626 specifications.
 
+maxWithdraw
 
+     MUST factor in both global and user-specific limits, like if withdrawals are entirely disabled (even temporarily) it MUST
+     return 0.
 
+maxRedeem
 
+     MUST factor in both global and user-specific limits, like if redemption is entirely disabled (even temporarily) it MUST
+     return 0.
 
-    
+https://eips.ethereum.org/EIPS/eip-4626
 
-
-
-
-
-
-
-
-
-Tools Used
+## Tools Used
 Manual Auditing
 
-Recommended Mitigation Steps
+## Recommended Mitigation Steps
+
+User if else block & if the time period is within the 1st Tuesday (UTC+0) of the month return balanceOf[user] & else return 0.
+
+For more information: https://blog.openzeppelin.com/pods-finance-ethereum-volatility-vault-audit-2#non-standard-erc-4626-vault-functionality
+
 
 
 
