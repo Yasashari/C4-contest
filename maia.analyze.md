@@ -21,7 +21,7 @@ order to avoid gas griefing. (We are unable to check this with the current time 
 
 For more reading: https://www.rareskills.io/post/solidity-gasleft
 
-Team BPZ comprises three auditors who collectively dedicated over 300 hours to thoroughly analyze the code base and identify any
+Team BPZ comprises three auditors who collectively dedicated over 350 hours to thoroughly analyze the code base and identify any
 bugs present within it.
 
 
