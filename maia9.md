@@ -89,6 +89,7 @@ then user is able to deposit it and mint shares. [Basic implementation is here i
 since this contract uses the round down and up. Anyway this implementation is rather good with the current one since the current
 implementation is mostly caused user funds lose.]
 
+Mitigation 1
 
     93           function deposit(uint256[] calldata assetsAmounts, address receiver)
                        public
@@ -140,12 +141,13 @@ implementation is mostly caused user funds lose.]
 
      ++                function checkArray(uint256[] calldata assetsAmounts , uint256 shares ) public view  {
      ++                        uint256[] memory _assetsAmounts  = convertToAssets( shares) ;  // This is the actual amount user
-     ++                        should be send to get relevant shares.  
+     ++                        // should be send to get relevant shares.  
      ++               
      ++                         uint256 length = assetsAmounts.length;
                     
      ++                       for (uint256 i = 0; i < length;) {
-     ++                           require ( assetsAmounts[i] == _assetsAmounts[i] ) ;
+     ++                           require ( assetsAmounts[i] == _assetsAmounts[i] ) ; // Here checking the each array elements
+                               //    are equal
      ++                           unchecked {
      ++                               i++;
      ++                           }
@@ -153,7 +155,13 @@ implementation is mostly caused user funds lose.]
                     
                     
      ++                   }
-      
+
+Mitigation 2
+
+Add slippage ( x % in percentage) into the above, So that there is an amount +/- x % is allowed to deposit by the user so it's no 
+need to deposit the exact amount by the user. It will solve the roundup or down issue as well.
+
+
 
 
 
