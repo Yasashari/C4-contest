@@ -1,6 +1,6 @@
 # _computeSGLPoolWeights() eventually revert due to block gas limit
 
-_computeSGLPoolWeights() calculates the  total pool weight of all active singularity markets. It iterates all the active
+computeSGLPoolWeights() calculates the  total pool weight of all active singularity markets. It iterates all the active
 markets(unbound loop) so that sooner or later it will exceed the block gas limit. 
 
 ## Proof of Concept
