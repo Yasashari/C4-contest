@@ -77,10 +77,10 @@ Above mentioned liquidator is able to liquidate all the collateral if LTV value 
 But it also does not comply with the computeClosingFactor function. If LTV is 91% at that point liquidator able to liquidate all
 the collateral. 
 
-Tools Used
+## Tools Used
 Vs code
 
-Recommended Mitigation Steps
+## Recommended Mitigation Steps
 It's needed to rewrite the computeClosingFactor function in order to achieve the doc's target values.  
 
 
