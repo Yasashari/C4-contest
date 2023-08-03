@@ -23,7 +23,7 @@ https://github.com/Tapioca-DAO/tapioca-yieldbox-strategies-audit/blob/master/con
 
 https://github.com/Tapioca-DAO/tapioca-yieldbox-strategies-audit/blob/master/contracts/convex/ConvexTricryptoStrategy.sol#L207C1-L208C70
 
-Here We cannot change the minAmount as desired so Dos is possible during the market crash conditions. 
+Here it's unable to change minAmount as relevant so Dos is possible during the market crash conditions.  
 
 
 ### Tools Used
