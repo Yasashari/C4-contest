@@ -1,4 +1,4 @@
-# Dos due to hardcode slippage during the market turbulence conditions. 
+# DOS due to hardcode slippage during the market turbulence conditions. 
 
 During market turbulence (market crash)  it's unpredictable the minimum output amounts when swapping. But here slippage is
 hardcoded so eventually it makes dos during market crash conditions.
@@ -31,7 +31,7 @@ Vs code
 
 ## Recommended Mitigation Steps
 
-Use minimum output amount or slipage as a function arguments. 
+Use minimum amount or slipage as a function arguments. 
 
 
         
