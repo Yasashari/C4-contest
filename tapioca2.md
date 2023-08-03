@@ -1,12 +1,15 @@
-# computeClosingFactor function does not comply with the relevant docs.
+## computeClosingFactor function does not comply with the relevant docs.
 
+This text is extracted from the tapioca documentation.
 
 ```For example, if a user borrowed 8000 USDO with $10,000 in ETH in a 75% LTV market, the liquidator will only be allowed to liquidate $500 of user collateral, therefore the amount that can be liquidated is $500 + 3% (of the borrowed amount) which in this case equals $800.```
+
+https://docs.tapioca.xyz/tapioca/core-functions-explained/liquidations
 
 But here actual liquidation amount is different with 800$. 
 
 
-## Proof of Concept
+### Proof of Concept
 
 
 
@@ -72,15 +75,17 @@ than with docs.
 Also,
 ``` A liquidator can only liquidate all collateral contained in a CDP if the LTV is greater than 100% due to the danger to Tapioca's system solvency that a CDP of above 100% LTV possesses. Otherwise, a liquidator can only liquidate the amount of collateral necessary to make a CDP solvent, also including the liquidation penalty bonus. ```
 
+https://docs.tapioca.xyz/tapioca/core-functions-explained/liquidations
+
 Above mentioned liquidator is able to liquidate all the collateral if LTV value is greater than 100%.
 
 But it also does not comply with the computeClosingFactor function. If LTV is 91% at that point liquidator able to liquidate all
 the collateral. 
 
-## Tools Used
+### Tools Used
 Vs code
 
-## Recommended Mitigation Steps
+### Recommended Mitigation Steps
 It's needed to rewrite the computeClosingFactor function in order to achieve the doc's target values.  
 
 
