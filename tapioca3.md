@@ -1,4 +1,4 @@
-# Liquidation swap having 2 minimum amounts to satisfy in order to swap successfully. ( Possible dos during the market crash )
+## Liquidation swap having 2 minimum amounts to satisfy in order to swap successfully. ( Possible dos during the market crash )
 
 When liquidator liquidates user during the market crash, liquidator is able to set the minAssetMount as he needs. But He is
 unable to set a minAssetMount that is less than the borrowShare. In order to swap successfully minAssetMount > borrowShare during
@@ -7,7 +7,7 @@ lower than the borrowShare so it could be unable to swap during the market crash
 debit compared with less bad debt. 
 
 
-## Proof of Concept
+### Proof of Concept
 
           603             uint256 minAssetMount = 0;
                           if (_dexData.length > 0) {
@@ -48,10 +48,10 @@ https://github.com/Tapioca-DAO/tapioca-bar-audit/blob/2286f80f928f41c8bc189d0657
 i.e. this swap has 2 minimum output amounts such that liquidator is unable to set minAssetMount that is less than the
 borrowShare during the market crash.
 
-## Tools Used
+### Tools Used
 Vs code
 
-## Recommended Mitigation Steps
+### Recommended Mitigation Steps
 There should be a onlyowner function to liquidate users during market crash. If not liquidator set the minAssetMount as
 he desired and sandwich the liquidation swap. 
 
