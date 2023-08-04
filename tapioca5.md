@@ -1,9 +1,9 @@
 ##  _totalBorrow.elastic is increased number of the accrue() function called by the users. So attacker is able to liquidate the users by frequently calling accrue() function. 
 
- _totalBorrow.elastic can have different values if users call this function in different time intervals. i.e.  _totalBorrow.elastic
- changing with the number of calls accrue() function by users. If someone called accrue() in 5 seconds interval  there is a one
- value for _totalBorrow.elastic & it's different with if someone called that function in 100 seconds interval . Also, 5 secons
- interval value is greater than 100 seconds interval. Finally, It's affected the user liquidation as well.
+ _totalBorrow.elastic can have different values if users call this function in different time intervals. i.e.
+ _totalBorrow.elastic changing with the number of calls accrue() function by users. If someone called accrue() in 5 seconds
+ interval  there is a one value for _totalBorrow.elastic & it's different with if someone called that function in 100 seconds
+ interval. Also, 5 seconds value is greater than 100 seconds interval. Finally, It's affected the user liquidation as well.
 
  ### Proof of Concept
 
@@ -37,22 +37,25 @@
                     
                             emit LogAccrue(extraAmount, _accrueInfo.debtRate);
           541               }
-        
+when calculating the extraAmount (line 530) you can see it's multiplying by the previous _totalBorrow.elastic by the elapsed
+time. It acts like a compound interesting. If someone called this function frequently _totalBorrow.elastic value drastically
+increased.         
+
 https://github.com/Tapioca-DAO/tapioca-bar-audit/blob/2286f80f928f41c8bc189d0657d74ba83286c668/contracts/markets/bigBang/BigBang.sol#L512C1-L542C1
 
 
-when calculating the extraAmount (line 530) you can see it's multiplying by the previous _totalBorrow.elastic by the elapsed
-time. It acts like a compound interesting. If someone called this function frequently _totalBorrow.elastic value drastically
-increased. 
+
 
 
           232                  function accrue() public {
                                  _accrue();
           234                  }
 
+An attacker is able to call accrue() function frequently such that user get liquidated.
+
 https://github.com/Tapioca-DAO/tapioca-bar-audit/blob/2286f80f928f41c8bc189d0657d74ba83286c668/contracts/markets/bigBang/BigBang.sol#L232C5-L234C6
 
-An attacker is able to call accrue() function frequently such that user get liquidated.
+
 
           414                   return
                                 yieldBox.toAmount(
@@ -66,10 +69,12 @@ An attacker is able to call accrue() function frequently such that user get liqu
                                 (borrowPart * _totalBorrow.elastic * _exchangeRate) /
           424                   _totalBorrow.base;
 
+This inequality determines if a user is solvent or not. An attacker is able to set the high value to _totalBorrow.elastic such
+that above inequality returns false then the user liquidating here. 
+
 https://github.com/Tapioca-DAO/tapioca-bar-audit/blob/2286f80f928f41c8bc189d0657d74ba83286c668/contracts/markets/Market.sol#L423C27-L423C47
 
-This inequality determines if a user is solvent or not. An attacker able to set the high value to _totalBorrow.elastic such that
-above inequality returns false then the user liquidating here. 
+
 
 
 
