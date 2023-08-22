@@ -1,13 +1,24 @@
-## call/delegatecall/staticcall does not check the contract existence. Since call/delegatecall/staticcall returns true even if the contracts which are not not existing. 
+## Summary
+call/delegatecall/staticcall does not check the contract existence. Since call/delegatecall/staticcall returns true even if the contracts which are not not existing. 
+
+## Vulnerability Detail
 
 Low-level calls call/delegatecall/staticcall return true even if the account called is non-existent (per EVM design). Solidity
 documentation warns: "The low-level functions call, delegatecall and staticcall return true as their first return value if the
 account called is non-existent, as part of the design of the EVM. Account existence must be checked prior to calling if needed.”
 
-There are few cases used the call/staticcall in the below contracts without checking the contract existance. 
+There are few cases used the call/staticcall in the below contracts without checking the contract existence. 
 
 
-## Proof of Concept
+## Impact
+Here it checked the address for nonzero but still low-level calls return true nonzero(address) nonexisting contracts. Checking
+only retune value success is not enough to evaluate transactions done correctly. So It should be checked for contract
+existence as well in order to confirm the transaction occurred correctly. 
+
+
+
+
+## Code Snippet
 
        38              (bool success,) = address(vault).staticcall(abi.encodeWithSignature(funcSelector, poolId, fromAddress));
        39             if (!success) revert DataMismatch("fromAddress");
