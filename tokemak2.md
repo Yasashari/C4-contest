@@ -9,6 +9,8 @@ isGte function is not working as expected when two unsigned integers are equal. 
 
 ## Code Snippet
 
+The current implementation of [isGte function](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/solver/helpers/Integer.sol#L13C2-L21C6)  is shown below. 
+
           12                 /**
           13             * @notice Checks if a given unsigned integer 'a' is greater than another unsigned integer 'b'.
           14             * @param a The first unsigned integer.
@@ -20,7 +22,6 @@ isGte function is not working as expected when two unsigned integers are equal. 
           20                }
           21            }
 
-https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/solver/helpers/Integer.sol#L13C2-L21C6
 
 ## Tool used
 
