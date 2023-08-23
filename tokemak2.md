@@ -11,6 +11,8 @@ isGte function is not working as expected when two unsigned integers are equal. 
 
 The current implementation of [isGte function](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/solver/helpers/Integer.sol#L13C2-L21C6)  is shown below. 
 
+```solidity
+
           12                 /**
           13             * @notice Checks if a given unsigned integer 'a' is greater than another unsigned integer 'b'.
           14             * @param a The first unsigned integer.
@@ -22,6 +24,8 @@ The current implementation of [isGte function](https://github.com/sherlock-audit
           20                }
           21            }
 
+```
+
 
 ## Tool used
 
@@ -31,7 +35,10 @@ Manual Review
 
 Add an equal sign to line 18. 
 
-        18                if (a <= b) {    
+```solidity
+
+        18                if (a <= b) {
+```
 
 
 
