@@ -1,8 +1,11 @@
 ## Summary
-User A who stake some period getting same reward as User B who front run topoffRewards and stake same duration as UserA. So it's unfair the user who stake a longer duration. Here front run opportunity is there ,  So better not to stake longer duration but front run the topoffRewards and stake. 
+User A who stake some period getting same reward as User B who front run topoffRewards and stake to end date(withdrawal date)
+of UserA. So it's unfair the user who stake a longer duration. Here front run opportunity is there,  So better not to stake longer duration but front run the topoffRewards and stake. 
 
 ## Vulnerability Detail
-When calculating [points](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/staking/GPToke.sol#L195) in [previewPoints](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/staking/GPToke.sol#L183C2-L196C6) function, points is calculated regardless of the time they staking but only considering the duration & amount of staking. So points would be the same if two users stake same amounts & duration but with different times of stacking. This amount is minted to stacker & this amount acts as the final proportion method to divide the topoffRewards. So this minted amount is not dependent on the time of the stacking. So it's unfair the users who stake longer periods.
+When calculating [points](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/staking/GPToke.sol#L195) in [previewPoints](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/staking/GPToke.sol#L183C2-L196C6) function, points is calculated regardless of the time they staking but
+only considering the duration & amount of staking. So points would be the same if two users stake same amounts with same withdrawal timestamp but with different times of stacking. This amount is minted to stacker & this amount acts as the final
+proportion method to divide the topoffRewards. So this minted amount is not dependent on the time of the stacking. So it's unfair the users who stake longer periods.
 
 ## Impact
 It's unfair to the users who stake longer periods. Since front runner is able to get the same proportion of rewards, not staking the whole period but front running the topoffRewards and stake. 
@@ -12,7 +15,7 @@ It's unfair to the users who stake longer periods. Since front runner is able to
 Here its attached Foundry-POC.  test_StakingRewards_MultiUser() is the test that considers here. All the required comments are included in relevant places. 
 
 Here User1 deposit 1WETH as well as User2 deposit 1WETH. (same amount) . User1 duration 12 months whereas user2 duration 11
-month. Here reward is 10WETH. But User1 and User2 is clamied as nearly as same amounts. (5WETH for each ) 
+month. Here reward is 10WETH. But User1 and User2 is clamied as nearly as same amounts. (5WETH for each ). 
 
 
 ```solidity
