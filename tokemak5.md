@@ -85,7 +85,7 @@ function test_withdraw_ReceivesNoMoreThanCachedIfPriceIncreases() public {
     }
 ```
 
-Also used console.log to check _convertToAssets funciton .  Also final output values as in terminal as shown below. 
+Also used console.log to check  [_convertToAssets function](https://github.com/sherlock-audit/2023-06-tokemak-BPZ/blob/main/v2-core-audit-2023-07-14/src/vault/LMPVault.sol#L595C3-L598C6) .  Also final output values as in terminal as shown below. 
 ```solidity
   function _convertToAssets(uint256 shares, Math.Rounding rounding) internal view virtual returns (uint256 assets) {
         uint256 supply = totalSupply();
@@ -104,7 +104,9 @@ supply: 100
 shares: 115792089237316195423570985008687907853269984665640564039457584007913129639935  
 totalAssets(): 300
 ```
-
+So here assets = shares x totalAssets() / supply 
+              = 115792089237316195423570985008687907853269984665640564039457584007913129639935 x 300 / 100 ---> Overflow
+              
 ## Tool used
 Foundry
 
