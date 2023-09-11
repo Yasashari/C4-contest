@@ -52,13 +52,78 @@ function getExpectedEmissionRates(
   return (expectedDelegatedEmissionRate, expectedCommunityEmissionRate);
 }
 
-contract RewardVault_GetMultiplier is
+ contract RewardVault_GetMultiplier is
   IRewardVault_GetMultiplier,
   RewardVault_WithoutStakersAndTimePassed
 {
+
+function test_forfeitedMoreFromLessUnstaker() public {
+   changePrank(REWARDER);
+    s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
+
+    changePrank(COMMUNITY_STAKER_ONE);
+    s_LINK.transferAndCall(
+      address(s_communityStakingPool),
+      COMMUNITY_MIN_PRINCIPAL*100+1,
+      abi.encode(s_communityStakerOneProof)
+    );
+
+     
+     changePrank(COMMUNITY_STAKER_TWO);
+
+     s_LINK.transferAndCall(
+      address(s_communityStakingPool),
+      COMMUNITY_MIN_PRINCIPAL*10000,
+      abi.encode(s_communityStakerTwoProof)
+    );
+
+    changePrank(COMMUNITY_STAKER_ONE);
+    s_communityStakingPool.unbond();
+
+    skip(UNBONDING_PERIOD);
+    s_communityStakingPool.unstake( 1 , false );
+   
+}
+
+
+//Start my code
+function test_CorrectCalculationOnfeitedAmountForMoreUnstaking() public {
+   changePrank(REWARDER);
+    s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
+
+    changePrank(COMMUNITY_STAKER_ONE);
+    s_LINK.transferAndCall(
+      address(s_communityStakingPool),
+      COMMUNITY_MIN_PRINCIPAL*100+1,
+      abi.encode(s_communityStakerOneProof)
+    );
+
+     
+     changePrank(COMMUNITY_STAKER_TWO);
+
+     s_LINK.transferAndCall(
+      address(s_communityStakingPool),
+      COMMUNITY_MIN_PRINCIPAL*10000,
+      abi.encode(s_communityStakerTwoProof)
+    );
+
+    changePrank(COMMUNITY_STAKER_ONE);
+    s_communityStakingPool.unbond();
+
+    skip(UNBONDING_PERIOD);
+    s_communityStakingPool.unstake( 2 , false );
+   
+}
+//end
+
+
+
+
+
   function test_ReturnsZeroWhenStakerNotStaked() public {
     assertEq(s_rewardVault.getMultiplier(COMMUNITY_STAKER_ONE), 0);
   }
+
 
   function test_ReturnsZeroWhenStakerStakedAndNoTimePassed() public {
     changePrank(COMMUNITY_STAKER_ONE);
@@ -155,35 +220,7 @@ contract RewardVault_GetMultiplier is
     );
     assertEq(s_rewardVault.getMultiplier(COMMUNITY_STAKER_ONE), 0);
   }
-//Start my code
-function test_forfeitedMoreFromLessUnstaker() public {
-   changePrank(REWARDER);
-    s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
 
-    changePrank(COMMUNITY_STAKER_ONE);
-    s_LINK.transferAndCall(
-      address(s_communityStakingPool),
-      COMMUNITY_MIN_PRINCIPAL*100+1,
-      abi.encode(s_communityStakerOneProof)
-    );
-
-     
-     changePrank(COMMUNITY_STAKER_TWO);
-
-     s_LINK.transferAndCall(
-      address(s_communityStakingPool),
-      COMMUNITY_MIN_PRINCIPAL*10000,
-      abi.encode(s_communityStakerTwoProof)
-    );
-
-    changePrank(COMMUNITY_STAKER_ONE);
-    s_communityStakingPool.unbond();
-
-    skip(UNBONDING_PERIOD);
-    s_communityStakingPool.unstake( 2 , false );
-   
-}
-//end
   function test_DoesNotGrowAfterStakerFullyUnstaked() public {
     changePrank(COMMUNITY_STAKER_ONE);
     s_LINK.transferAndCall(
@@ -400,7 +437,6 @@ function test_forfeitedMoreFromLessUnstaker() public {
 }
 
 ```
-
 
 
 
