@@ -57,6 +57,7 @@ function getExpectedEmissionRates(
   RewardVault_WithoutStakersAndTimePassed
 {
 
+//More forfeited Amount Test
 function test_forfeitedMoreFromLessUnstaker() public {
    changePrank(REWARDER);
     s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
@@ -86,7 +87,7 @@ function test_forfeitedMoreFromLessUnstaker() public {
 }
 
 
-//Start my code
+//Correct calculation when more unstacking
 function test_CorrectCalculationOnfeitedAmountForMoreUnstaking() public {
    changePrank(REWARDER);
     s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
@@ -114,7 +115,7 @@ function test_CorrectCalculationOnfeitedAmountForMoreUnstaking() public {
     s_communityStakingPool.unstake( 2 , false );
    
 }
-//end
+
 
 
 
