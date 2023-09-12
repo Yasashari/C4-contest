@@ -1,4 +1,4 @@
-## Overflow is possible due to downcasting. 
+## Overflow is possible due to downcasting. So Operator unstacking reverted. 
 
 what [_calculateForfeitedRewardDistribution()](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1579) function does is distribute the forfeited Amount to the rest of the remaining stakers. There is a [division](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1591C7-L1591C82) to calculate vestedRewardPerToken.Then finally its downcast to unit80 [here](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1556C1-L1558C95). Issue is if the amountOfRecipientTokens is gonna be very small amount then its going to be a overflow due to downcasting to uint80. 
 amountOfRecipientTokens can be a small value after slashing. Since stackers are unable to unstake so that remaining balance is in a [dust](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/pools/StakingPoolBase.sol#L478C3-L481C6). But slashers able to slash such that remaining balance is gonna be [dust](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/pools/OperatorStakingPool.sol#L326). 
@@ -13,6 +13,8 @@ Now Operator two unstack. He will be not able to unstack due to overflow as expl
 
 Foundry POC.
 
+Here it's used [OperatorStakingPool.t.sol](https://github.com/code-423n4/2023-08-chainlink/blob/main/test/units/pools/OperatorStakingPool.t.sol) contract with slight modification. All the steps are given
+below.
 
 [Here](https://github.com/code-423n4/2023-08-chainlink/blob/main/test/units/pools/OperatorStakingPool.t.sol#L2701) its added 100
 wei to OPERATOR_STAKER_ONE. 
@@ -115,7 +117,7 @@ Foundry & Manual Auditing
 ## Recommended Mitigation Steps
 
 Downcasting is not safe [here](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1556).
-The maximum value would be [vestedRewardPerToken](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1556) is Total Link supply x e18 / 1  . So use casting appropriately.
+The maximum value would be [vestedRewardPerToken](https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1591) is Total Link supply x e18 / 1  . So use casting appropriately.
 
 
 
