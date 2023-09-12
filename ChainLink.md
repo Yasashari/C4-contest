@@ -38,7 +38,12 @@ Here user unstake only 1wei of Link tokens. His forfeited amount = 55.7261669024
 ```solidity
 function test_forfeitedMoreFromLessUnstaker() public {
    changePrank(REWARDER);
+
+// Rewarder added REWARD_AMOUNT & emission rate is EMISSION_RATE/2.
+
     s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
+
+// COMMUNITY_STAKER_ONE staked 100Link tokens + 1 wei .
 
     changePrank(COMMUNITY_STAKER_ONE);
     s_LINK.transferAndCall(
@@ -47,6 +52,7 @@ function test_forfeitedMoreFromLessUnstaker() public {
       abi.encode(s_communityStakerOneProof)
     );
 
+// COMMUNITY_STAKER_TWO staked 10000 Link tokens.
      
      changePrank(COMMUNITY_STAKER_TWO);
 
