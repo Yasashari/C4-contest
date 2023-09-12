@@ -81,12 +81,31 @@ Console log Used on these places in RewardVault.sol contract.
 ```
 https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L1554C1-L1557C15
 
+```solidity
+ } else {
+      forfeitedRewardAmount = forfeitedRewardAmountTimesUnstakedAmount / oldPrincipal;
+      console.log("forfeitedRewardAmountTimesUnstakedAmount2", forfeitedRewardAmountTimesUnstakedAmount);
+      console.log("oldPrincipal2", oldPrincipal);
+      console.log("forfeitedRewardAmount2",forfeitedRewardAmount);
+    }
+
+```
+https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L937C1-L939C6
 
 
-Terminal is as given below.
+The terminal is as given below.
 
-![yasas1](https://github.com/Yasashari/C4-contest/assets/118436384/72db9bee-4df0-4227-8c95-e3aa41fe05cc)
+![LinkFinal](https://github.com/Yasashari/C4-contest/assets/118436384/99deda90-ee3f-43ae-a58e-e5fc1e852214)
 
+
+Here what happend is when calculating the vestedRewardPerToken
+```
+vestedRewardPerToken = forfeitedReward.divWadDown(amountOfRecipientTokens);
+```
+
+vestedRewardPerToken = 1759468945918320104502 x 1e18 / 100
+
+= 17594689459183201045020000000000000000 ---->  Overflow (Due to more than max Unit80)
 
 
 ## Tools Used
