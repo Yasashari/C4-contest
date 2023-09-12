@@ -123,5 +123,24 @@ The maximum value would be [vestedRewardPerToken](https://github.com/code-423n4/
 
 
 
+```
+Running 1 test for test/units/pools/OperatorStakingPool.t.sol:OperatorStakingPool_Slash_WhenOperatorsHaveStakedTheSlashableFeedAmount
+[FAIL. Reason: SafeCast: value doesn't fit in 80 bits] test_OverflowDueToSlashing() (gas: 223398)  
+Logs:
+  forfeitedRewardAmountTimesUnstakedAmount2 17594689459183201045025000000000000000000000
+  oldPrincipal2 10000000000000000000000
+  forfeitedRewardAmount2 1759468945918320104502
+  vestedRewardPerToken 17594689459183201045020000000000000000
 
+Test result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 64.26ms
+
+Ran 1 test suites: 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/units/pools/OperatorStakingPool.t.sol:OperatorStakingPool_Slash_WhenOperatorsHaveStakedTheSlashableFeedAmount
+[FAIL. Reason: SafeCast: value doesn't fit in 80 bits] test_OverflowDueToSlashing() (gas: 223398)  
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+```
 
