@@ -1,7 +1,8 @@
-## If user unsake very less amount, He is penalized full forfeitedRewardAmount  whereas user unstake more tokens he is penalized less forfeitedRewardAmount tokens.
+## If the user unsakes a very less amount, He is penalized full forfeitedRewardAmount  whereas user unstakes more tokens he is penalized less forfeitedRewardAmount tokens.
 
-What it should be is if user unstake less tokens he should penalized less forfeitedRewardAmount & vice verisa. But here it's not
-happened during some token amount period (range) of unstacking. 
+What it should be is if the user unstackes less tokens he should be penalized less forfeitedRewardAmount & more token
+unstacking more forfeitedRewardAmount should be penalized. But here it has not happened during some token amount period (range)
+of unstacking. (Meaning less token unstacking more forfeitedRewardAmount going to be penalized ).
 
 ## Proof of Concept
 
@@ -23,7 +24,7 @@ happened during some token amount period (range) of unstacking.
 ```
 https://github.com/code-423n4/2023-08-chainlink/blob/main/src/rewards/RewardVault.sol#L927C5-L940C1
 
-Lets think user unstake 1wei of Link tokens which satisfy this inequality 
+Let's think user unstake 1wei of Link tokens which satisfies this inequality 
 forfeitedRewardAmountTimesUnstakedAmount < oldPrincipal
 Then he is gonna forfeit the full forfeit amount(fullForfeitedRewardAmount). (line 18)
 
@@ -32,7 +33,7 @@ Whereas, If user unstake forfeitedRewardAmountTimesUnstakedAmount = oldPrincipal
 
 Foundry poc
 
-In order to run this test its needed to copy & paste below functions in to the [RewardVault.t.sol](https://github.com/code-423n4/2023-08-chainlink/blob/main/test/units/rewards/RewardVault.t.sol#L1085) in to (around) line 1085.
+In order to run this test it's needed to copy & paste the below functions into the [RewardVault.t.sol](https://github.com/code-423n4/2023-08-chainlink/blob/main/test/units/rewards/RewardVault.t.sol#L1085) in to (around) line 1085.
 Here user unstake only 1wei of Link tokens. His forfeited amount = 55.726166902404526157 Link tokens
 
 ```solidity
@@ -73,9 +74,9 @@ function test_forfeitedMoreFromLessUnstaker() public {
 console log as below. 
 
 ```solidity
- if (forfeitedRewardAmountTimesUnstakedAmount < oldPrincipal) {
+  if (forfeitedRewardAmountTimesUnstakedAmount < oldPrincipal) {
       forfeitedRewardAmount = fullForfeitedRewardAmount;
-      console.log("forfeitedRewardAmount1",forfeitedRewardAmount);
+      console.log("forfeitedRewardAmountTimesUnstakedAmount1",forfeitedRewardAmountTimesUnstakedAmount);
       console.log("oldPrincipal1", oldPrincipal);
       console.log("forfeitedRewardAmount1",forfeitedRewardAmount);
     } else {
@@ -91,17 +92,17 @@ in this case terminal is as shown below.
 
 Logs:
 
-  forfeitedRewardAmount1 55726166902404526157
+  forfeitedRewardAmountTimesUnstakedAmount1 55726166902404526157
   
   oldPrincipal1 100000000000000000001
   
   forfeitedRewardAmount1 55726166902404526157
 
   
-Here user unstaked 2 wei of Link tokens . His forfeited amount = 1 wei. 
+Here user unstaked 2 wei of Link tokens . His forfeited amount = 1 wei. (This value is correct). 
 
 ```solidity
-function test_forfeitedMoreFromLessUnstaker() public {
+function test_CorrectCalculationOnfeitedAmountForMoreUnstaking() public {
    changePrank(REWARDER);
     s_rewardVault.addReward(address(0), REWARD_AMOUNT, EMISSION_RATE/2);
 
@@ -124,6 +125,8 @@ function test_forfeitedMoreFromLessUnstaker() public {
     changePrank(COMMUNITY_STAKER_ONE);
     s_communityStakingPool.unbond();
 
+// Here unstake 2 wei make sure to correct amount is forfeited.
+
     skip(UNBONDING_PERIOD);
     s_communityStakingPool.unstake( 2 , false );
    
@@ -138,6 +141,20 @@ Logs:
   forfeitedRewardAmount2 1
 
   
+This kind of full forfeitedRewardAmount can be penalized with range of values the user unstakes. For that this inequality should
+be satisfied.
+
+forfeitedRewardAmountTimesUnstakedAmount < oldPrincipal.
+
+Here forfeitedRewardAmountTimesUnstakedAmount = fullForfeitedRewardAmount * unstakedAmount
+
+This inequality can be satisfied with less amount of unstakedAmount with high fullForfeitedRewardAmount. 
+
+Let's think there is a less emission rate & less unbonding period, then there is a range of values for unstakedAmount which satisfies the above inequality. (Since With less emission rate & less unbonding period, fullForfeitedRewardAmount going to be
+a smaller amount. So unstakedAmount can get a range of values that satisfy the above inequality ).
+
+
+
 
 ## Tools Used
 Foundry & Manual auditing
