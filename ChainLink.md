@@ -1,4 +1,4 @@
-## If the user unsakes a very less amount, He is penalized full forfeitedRewardAmount  whereas user unstakes more tokens he is penalized less forfeitedRewardAmount tokens.
+## If the user unsackes a very less amount, He is penalized full forfeitedRewardAmount  whereas user unstackes more tokens he is penalized less forfeitedRewardAmount tokens.
 
 What it should be is if the user unstackes less tokens he should be penalized less forfeitedRewardAmount & more token
 unstacking more forfeitedRewardAmount should be penalized. But here it has not happened during some token amount period (range)
@@ -143,8 +143,8 @@ Logs:
   forfeitedRewardAmount2 1
 
   
-This kind of full forfeitedRewardAmount can be penalized with range of values the user unstakes. For that this inequality should
-be satisfied.
+This kind of full forfeitedRewardAmount can be penalized with range of values the user unstackes. For that this inequality
+should be satisfied.
 
 forfeitedRewardAmountTimesUnstakedAmount < oldPrincipal.
 
