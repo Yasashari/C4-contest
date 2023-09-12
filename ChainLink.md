@@ -98,7 +98,9 @@ Logs:
   
   forfeitedRewardAmount1 55726166902404526157
 
-  
+
+
+Test case for forfeitedRewardAmountTimesUnstakedAmount > oldPrincipal . (Just to make sure it work as expected).  
 Here user unstaked 2 wei of Link tokens . His forfeited amount = 1 wei. (This value is correct). 
 
 ```solidity
